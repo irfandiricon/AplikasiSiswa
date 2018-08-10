@@ -142,10 +142,7 @@ function simpanGroupMenu(){
                         cache: false,
                         success: function(data){
                             $.messager.alert('Konfirmasi', data, 'info');
-                            $('#addGroupMenu').dialog('close').dialog('destroy');
-                            setTimeout(function (){
-                                $('.pagination-load').trigger('click');
-                            },1000);
+                            window.location.reload();
                         }
                     });
                 }
@@ -169,8 +166,7 @@ function hapusGroupMenu(){
                     data : "id_group_menu="+id_group_menu,
                     cache: false,
                     success: function(html){
-                        $('.pagination-load').trigger('click');
-                        console.log(html);
+                        window.location.reload();
                     }
                 });
             }
@@ -241,10 +237,7 @@ function simpanEditGroupMenu(){
                         cache: false,
                         success: function(data){
                             $.messager.alert('Konfirmasi', data, 'info');
-                            $('#editGroupMenu').dialog('close').dialog('destroy');
-                            setTimeout(function (){
-                                $('.pagination-load').trigger('click');
-                            },1000);
+                            window.location.reload();
                         }
                     });
                 }
@@ -300,10 +293,7 @@ function simpanMenu(id_group_menu){
                         cache: false,
                         success: function(data){
                             $.messager.alert('Konfirmasi', data, 'info');
-                            $('#addMenu').dialog('close').dialog('destroy');
-                            setTimeout(function (){
-                                $('.pagination-load').trigger('click');
-                            },1000);
+                            window.location.reload();
                         }
                     });
                 }
@@ -383,10 +373,7 @@ function simpanEditMenu(id_group_menu){
                         cache: false,
                         success: function(data){
                             $.messager.alert('Konfirmasi', data, 'info');
-                            $('#editMenu').dialog('close').dialog('destroy');
-                            setTimeout(function (){
-                                $('.pagination-load').trigger('click');
-                            },1000);
+                            window.location.reload();
                         }
                     });
                 }
@@ -410,9 +397,7 @@ function hapusMenu(id_group_menu){
                     data : "id_menu="+id_menu,
                     cache: false,
                     success: function(html){
-                        $('#editMenu').dialog('close').dialog('destroy');
-                        $('.pagination-load').trigger('click');
-                        console.log(html);
+                        window.location.reload();
                     }
                 });
             }

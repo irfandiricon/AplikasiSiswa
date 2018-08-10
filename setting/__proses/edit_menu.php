@@ -16,12 +16,15 @@ if($status_aktif=="Aktif"){
     $status='0';
 }
 
-$query="UPDATE $DB.$table_menu SET nama_menu='$nama_menu',path='$path',nama_file='$nama_file',"
-        . "status_aktif='$status' where id_menu='$id_menu'";
+$query="UPDATE $db.$table_menu SET nama_menu='$nama_menu',path='$path',nama_file='$nama_file',"
+        . "flag_aktif='$status' where id_menu='$id_menu'";
 $ex_query= mysqli_query($con, $query);
 
 if ($ex_query){
-    echo json_encode('Berhasil Tersimpan');
+    $pesan = "Berhasil Tersimpan !!!";
 }else{
-    echo json_encode(mysqli_error($ex_query));
+    $pesan = "Gagal Tersimpan, Error : ".mysqli_error($con);
 }
+
+echo json_encode($pesan);
+mysqli_close($con);

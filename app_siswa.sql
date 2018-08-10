@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.1.19-MariaDB : Database - app_siswa
+MySQL - 5.5.5-10.1.28-MariaDB : Database - app_siswa
 *********************************************************************
 */
 
@@ -34,33 +34,11 @@ CREATE TABLE `app_menu` (
   `deleted_by` int(11) DEFAULT NULL,
   `flag_aktif` enum('Y','N') DEFAULT 'Y',
   PRIMARY KEY (`id_menu`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 /*Data for the table `app_menu` */
 
-insert  into `app_menu`(`id_menu`,`id_group_menu`,`nama_menu`,`path`,`nama_file`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`) values (1,1,'Pengaturan Menu','setting/app_menu','index.php','2018-08-04 13:32:31',1,NULL,NULL,NULL,NULL,'Y'),(2,1,'Pengaturan Akses','setting/app_access','index.php','2018-08-04 14:16:11',1,NULL,NULL,NULL,NULL,'Y');
-
-/*Table structure for table `app_menu_access` */
-
-DROP TABLE IF EXISTS `app_menu_access`;
-
-CREATE TABLE `app_menu_access` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `id_group_menu` varchar(50) DEFAULT NULL,
-  `id_menu` varchar(250) DEFAULT NULL,
-  `created_date` datetime DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `updated_date` datetime DEFAULT NULL,
-  `updated_by` int(11) DEFAULT NULL,
-  `deleted_date` datetime DEFAULT NULL,
-  `deleted_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
-/*Data for the table `app_menu_access` */
-
-insert  into `app_menu_access`(`id`,`user_id`,`id_group_menu`,`id_menu`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`) values (1,1,'1','1,2','2018-08-04 13:33:20',NULL,NULL,NULL,NULL,NULL);
+insert  into `app_menu`(`id_menu`,`id_group_menu`,`nama_menu`,`path`,`nama_file`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`) values (1,1,'Pengaturan Menu','setting/app_menu','index.php','2018-08-04 13:32:31',1,NULL,NULL,NULL,NULL,'Y'),(4,3,'Master Akses','content/app_menu','index.php','2018-08-10 19:21:23',1,NULL,NULL,NULL,NULL,'Y');
 
 /*Table structure for table `app_menu_group` */
 
@@ -78,7 +56,7 @@ CREATE TABLE `app_menu_group` (
   `deleted_by` int(11) DEFAULT NULL,
   `flag_aktif` enum('Y','N') DEFAULT 'Y',
   PRIMARY KEY (`id_group_menu`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `app_menu_group` */
 

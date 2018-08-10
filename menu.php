@@ -1,7 +1,6 @@
 <?php
 include 'koneksi_db/Koneksi.php';
 
-$table_access_menu = TABLE_MENU_ACCESS;
 $table_menu = TABLE_MENU;
 $table_group_menu = TABLE_MENU_GROUP;
 $link_foto_profile = DIRECTORY_FOTO_PROFILE   ;
@@ -22,10 +21,6 @@ if(empty($nik) || $nik==""){
     }
 }
 
-$query_access_menu="SELECT id_menu from $db.$table_access_menu where user_id='$user_id'";
-$ex_query_access_menu= mysqli_query($con, $query_access_menu);
-$res_ex_query_access_menu= mysqli_fetch_assoc($ex_query_access_menu);
-$id_access_menu=$res_ex_query_access_menu['id_menu'];
 ?>
 <div class='left-sidebar'>
     <div class='scroll-sidebar'>
@@ -43,18 +38,7 @@ $id_access_menu=$res_ex_query_access_menu['id_menu'];
                 <hr width="100%">
             </div>
             <?php
-                $query2="SELECT c.id_group_menu FROM $db.$table_access_menu AS c WHERE user_id='$user_id'";
-                $ex_query2= mysqli_query($con, $query2);
-                $res_ex_query2= mysqli_fetch_assoc($ex_query2);
-                $rows_query2= mysqli_num_rows($ex_query2);
-                if ($rows_query2==0){
-                    $id_group_menu="NULL";
-                }else{
-                    $id_group_menu=$res_ex_query2['id_group_menu'];
-                }
-
-                $query_group_menu="SELECT a.* FROM $db.$table_group_menu AS a WHERE
-                    a.id_group_menu IN ($id_group_menu) and a.flag_aktif='Y'";
+                $query_group_menu="SELECT a.* FROM $db.$table_group_menu AS a WHERE  a.flag_aktif='Y'";
                 $ex_query_group_menu=mysqli_query($con,$query_group_menu);
                 while($res_ex_query_group_menu= mysqli_fetch_assoc($ex_query_group_menu)){
                 $nama_group_menu=$res_ex_query_group_menu['nama_group_menu'];
@@ -71,7 +55,7 @@ $id_access_menu=$res_ex_query_access_menu['id_menu'];
                     <ul aria-expanded='false' class='collapse'>
                       <?php
                         $query_menu="select distinct a.path,a.nama_file,nama_menu,id_menu from $db.$table_menu as a
-                        where a.id_menu IN ($id_access_menu) AND a.id_group_menu='$id_group_menu'
+                        where a.id_group_menu='$id_group_menu'
                         and a.flag_aktif='Y' order by a.id_group_menu,a.id_menu asc";
                         $ex_query_menu=mysqli_query($con,$query_menu);
                         while($res_ex_query_menu=mysqli_fetch_array($ex_query_menu)){
