@@ -1,8 +1,9 @@
 <?php
 include "koneksi_db/Koneksi.php";
 $USER_ID = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
+$LEVEL = isset($_SESSION['level']) ? $_SESSION['level']:"";
 
-if ($USER_ID){
+if ($USER_ID && $LEVEL=="1"){
 $nama_aplikasi = NAMA_APPLICATION;
 ?>
 <!DOCTYPE html>
@@ -19,7 +20,7 @@ $nama_aplikasi = NAMA_APPLICATION;
     <link href="css/helper.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/lib/dropzone/dropzone.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="easyUi/themes/metro-orange/easyui.css">
+    <link rel="stylesheet" type="text/css" href="easyUi/themes/bootstrap/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyUi/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyUi/easyui-texteditor/texteditor.css">
 </head>
@@ -31,11 +32,18 @@ $nama_aplikasi = NAMA_APPLICATION;
 </div>
 <div class="fix-header fix-sidebar" style="overflow:hidden">
     <div id="main-wrapper" >
+
         <?php
           include "head.php";
         ?>
         <div class="page-wrapper" >
-            <div class="panel panel-default panel-heading" id="panel-content" style="padding:10px;"></div>
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h5 class="text-primary" id="_title"></h5>
+                </div>
+            </div>
+            <div class="panel panel-default panel-heading" id="panel-content" style="padding-left:10px;padding-right:10px;"></div>
+            <footer class="footer">© 2018 All rights reserved</footer>
         </div>
     </div>
 
@@ -52,55 +60,75 @@ $nama_aplikasi = NAMA_APPLICATION;
     <script type="text/javascript" src="easyUi/datagrid.detailview.js"></script>
     <script type="text/javascript" src="easyUi/easyui-texteditor/jquery.texteditor.js"></script>
     <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+
+    <script src="js/lib/datatables/datatables.min.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
+    <script src="js/lib/datatables/cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+    <script src="js/lib/datatables/cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+    <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+    <script src="js/lib/datatables/datatables-init.js"></script>
+
     <script>
         $(function(){
             $('body').append("</bo"+"dy>");
-            var height = parseInt($(window).innerHeight()-130);
-            $('#panel-content').css({'height':height,'background-color':'#fff','font-size':'10px'});
+            var height = parseInt($('#panel-content').height())-350;
+            $('#panel-content').css({'height':height,'background-color':'#fff'});
         });
 
         $('#panel-content').load('welcome.php');
     </script>
+
     <style>
+        .panel{
+            font-size : 14px;
+        }
+
+        .btn {
+            font-size : 14px;
+        }
+
+        .card{
+            margin : 0px !important;
+        }
+
+        table {
+            color : black;
+        }
+        .table-striped tbody tr:nth-of-type(2n+1){
+            background-color: rgba(62, 227, 11, 0.1);
+        }
         input {
-            font-size: 10px;
+          overflow: visible;
         }
-        .datagrid-header .datagrid-cell span {
-            color : black;
-            font-weight: bold;
-            font-size: 10px;
+        .form-control{
+          display: block;
+          width: 100%;
+          padding: .375rem .75rem;
+          font-size: 12px;
+          line-height: 1.5;
+          color: #495057;
+          background-color: #fff;
+          background-clip: padding-box;
+          border: 1px solid #ced4da;
+          border-radius: .25rem;
+          transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
         }
-        .datagrid-view{
-            color : black;
-        }
-        .datagrid-toolbar{
-            color : black;
-            font-size : 10px;
-            padding : 5px;
-        }
-        .datagrid-cell{
-            font-size: 10px;
-            color : black;
-        }
-        .l-btn-text {
-            color : black;
-            font-size: 10px;
-        }
-        .datagrid-cell-rownumber{
-            color : black;
-            font-size: 10px;
-        }
-        .pagination{
-            color : black;
-            font-size : 10px;
-        }
-        .pagination-info{
-            color : black;
-            font-size : 10px;
-        }
-        .datagrid-cell{
-            color : black;
-            font-size : 10px;
+
+        textarea {
+            display: block;
+            width: 100%;
+            padding: .375rem .75rem;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #495057;
+            background-color: #fff;
+            background-clip: padding-box;
+            border: 1px solid #ced4da;
+            border-radius: .25rem;
+            transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
         }
     </style>
 </div>

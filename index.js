@@ -12,14 +12,18 @@ function setSession(session){
 
 $(function(){
     var hTbl = parseInt($('#panel-content').height());
-    $('#panel-content').css({height : hTbl});
+    $('#panel-content').css({'height' : hTbl});
     var $ex=$('#menu_aplikasi').find('.active');
+
+    $('#_title').html('Home ');
 
     $(document).on("click", "a.menu-application", function(e){
         try{
             var $this=$(this);
             var class_name_array=$this.attr('class').replace('active').trim().split(' ');
             var isPath=$this.data('path');
+            var isMenu=$this.data('menu');
+            var isGroupMenu=$this.data('path-group');
             var url=class_name_array[class_name_array.length-1];
             var isActive=$this.hasClass('active');
             if(isActive) return;
@@ -30,6 +34,7 @@ $(function(){
 
             $('#panel-content').load(isPath+'/'+url);
 
+            $('#_title').html(isMenu);
         }catch(e){
             alert(e);
         }

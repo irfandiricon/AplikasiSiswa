@@ -46,7 +46,7 @@ if(empty($nik) || $nik==""){
                 $id_group_menu=$res_ex_query_group_menu['id_group_menu'];
                 ?>
                 <li>
-                    <a class='has-arrow' href='#' aria-expanded='false'>
+                    <a class='has-arrow' href='#' aria-expanded='false' data-path-group="<?php echo $nama_group_menu;?>">
                         <font size="2">
                             <i><span class='<?php echo $font_icon ?> '></span></i>
                             <span class='hide-menu'><?php echo $nama_group_menu ?></span>
@@ -64,7 +64,7 @@ if(empty($nik) || $nik==""){
                         $path_menu=$res_ex_query_menu['path'];
                       ?>
                         <li>
-                            <a href='javascript:void(0)' data-path="<?php echo $path_menu;?>" class="menu-application <?php echo $nama_file; ?>">
+                            <a href='javascript:void(0)' data-path="<?php echo $path_menu;?>" data-menu="<?php echo $nama_menu;?>" class="menu-application <?php echo $nama_file; ?>">
                               <font size="2"><?php echo $nama_menu ?></font>
                             </a>
                         </li>

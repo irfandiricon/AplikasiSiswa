@@ -12,3 +12,5 @@ define('TABLE_MENU_GROUP', 'app_menu_group');
 define('TABLE_MENU', 'app_menu');
 define('TABLE_MENU_ACCESS', 'app_menu_access');
 define('TABLE_USER', 'app_user');
+
+define('TABLE_SEKOLAH','app_sekolah');
