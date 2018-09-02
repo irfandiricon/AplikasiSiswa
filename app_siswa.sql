@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.5.5-10.1.19-MariaDB : Database - u721770811_sas
+MySQL - 5.5.5-10.1.19-MariaDB : Database - app_siswa
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.5.5-10.1.19-MariaDB : Database - u721770811_sas
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`u721770811_sas` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`app_siswa` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `u721770811_sas`;
+USE `app_siswa`;
 
 /*Table structure for table `app_bidang_layanan` */
 
@@ -239,11 +239,11 @@ CREATE TABLE `app_sekolah` (
 
 insert  into `app_sekolah`(`id`,`nama`,`alamat`,`no_telpon`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`) values (10,'SMKN 1 PADANG','PADANG','0751-232345','2018-09-01 11:32:55',1,NULL,NULL,NULL,NULL,'Y');
 
-/*Table structure for table `u721770811_sas` */
+/*Table structure for table `app_siswa` */
 
-DROP TABLE IF EXISTS `u721770811_sas`;
+DROP TABLE IF EXISTS `app_siswa`;
 
-CREATE TABLE `u721770811_sas` (
+CREATE TABLE `app_siswa` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id_login` int(11) DEFAULT NULL,
   `nis` varchar(30) DEFAULT NULL,
@@ -266,9 +266,9 @@ CREATE TABLE `u721770811_sas` (
   PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
-/*Data for the table `u721770811_sas` */
+/*Data for the table `app_siswa` */
 
-insert  into `u721770811_sas`(`user_id`,`user_id_login`,`nis`,`nama_lengkap`,`tempat_lahir`,`tanggal_lahir`,`jenis_kelamin`,`alamat`,`email`,`no_telp`,`id_sekolah`,`kelas`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`) values (1,2,NULL,'Afa','Padang','2018-09-02','P',NULL,'afa@gmail.com','021',10,NULL,'2018-09-01 03:52:14',NULL,NULL,NULL,NULL,NULL,'Y'),(2,3,'','Lilis','','2018-09-03','','','2@gmail.com','021',0,'11','2018-09-01 03:52:58',NULL,'2018-09-03 05:10:26',3,NULL,NULL,'Y'),(3,4,NULL,'Imam Mawardi',NULL,'0000-00-00',NULL,NULL,'3@gmail.com','021',NULL,NULL,'2018-09-01 03:55:04',NULL,NULL,NULL,'2018-09-03 00:50:01',1,'N'),(4,5,NULL,'Masitoh noer ',NULL,'0000-00-00',NULL,NULL,'4@gmail.com','021',NULL,NULL,'2018-09-01 03:55:41',NULL,NULL,NULL,NULL,NULL,'N');
+insert  into `app_siswa`(`user_id`,`user_id_login`,`nis`,`nama_lengkap`,`tempat_lahir`,`tanggal_lahir`,`jenis_kelamin`,`alamat`,`email`,`no_telp`,`id_sekolah`,`kelas`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`) values (1,2,NULL,'Afa','Padang','2018-09-02','P',NULL,'afa@gmail.com','021',10,NULL,'2018-09-01 03:52:14',NULL,NULL,NULL,NULL,NULL,'Y'),(2,3,'','Lilis','','2018-09-03','','','2@gmail.com','021',0,'11','2018-09-01 03:52:58',NULL,'2018-09-03 05:10:26',3,NULL,NULL,'Y'),(3,4,NULL,'Imam Mawardi',NULL,'0000-00-00',NULL,NULL,'3@gmail.com','021',NULL,NULL,'2018-09-01 03:55:04',NULL,NULL,NULL,'2018-09-03 00:50:01',1,'N'),(4,5,NULL,'Masitoh noer ',NULL,'0000-00-00',NULL,NULL,'4@gmail.com','021',NULL,NULL,'2018-09-01 03:55:41',NULL,NULL,NULL,NULL,NULL,'N');
 
 /*Table structure for table `app_strategi_layanan` */
 
