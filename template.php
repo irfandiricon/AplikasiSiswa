@@ -75,7 +75,7 @@ $nama_aplikasi = NAMA_APPLICATION;
         $(function(){
             $('body').append("</bo"+"dy>");
             var height = parseInt($('#panel-content').height())-350;
-            $('#panel-content').css({'height':height,'background-color':'#fff'});
+            $('#panel-content').css({'background-color':'#fff'});
         });
 
         $('#panel-content').load('welcome.php');

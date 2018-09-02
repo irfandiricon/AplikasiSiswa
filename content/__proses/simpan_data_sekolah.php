@@ -14,5 +14,5 @@ if(!$ex) {
     $pesan = "Data gagal tersimpan, Error : ".mysqli_error($con);
 }
 
-echo $pesan;
+echo json_encode($pesan);
 mysqli_close($con);

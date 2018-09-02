@@ -20,7 +20,6 @@ if(empty($nik) || $nik==""){
         $foto_profile = $file;
     }
 }
-
 ?>
 <div class='left-sidebar'>
     <div class='scroll-sidebar'>

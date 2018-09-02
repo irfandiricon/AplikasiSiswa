@@ -1,11 +1,11 @@
 $(function(){
     $('#tabel_sekolah').dataTable({
-        dom : 'Bfrtip',
-        buttons : ['excel','print']
+        "dom" : 'Bfrtip',
+        "buttons" : ['excel','print'],
     });
 });
 
-function TambahDataSekolah(){
+function FormAddDataSekolah(){
     $('body').find('#form_add').remove();
     $('<div/>').attr('id','form_add').appendTo($('body')).dialog({
         href: 'content/master_data_sekolah/form_add.php',
@@ -17,7 +17,7 @@ function TambahDataSekolah(){
             text:'Simpan',
             iconCls:'icon-ok',
             handler:function(){
-               SimpanDataSekolah();
+               prosesSimpanDataSekolah();
             }
         },{
             text:'Batal',
@@ -29,12 +29,7 @@ function TambahDataSekolah(){
     });
 }
 
-function SimpanDataSekolah(){
-    var $this=$('a.menu-application.active');
-    var isPath=$this.data('path');
-    var class_name_array=$('a.menu-application').attr('class').replace('active').trim().split(' ');
-    var url=class_name_array[class_name_array.length-1];
-
+function prosesSimpanDataSekolah(){
     var nama = $('#nama').val();
     var alamat = $('#alamat').val();
     var no_telepon = $('#no_telepon').val();
@@ -52,33 +47,8 @@ function SimpanDataSekolah(){
         success : function (data){
             $('#form_add').dialog('close').dialog('destroy');
             console.log(data);
-            $('#panel-content').load(isPath+'/'+url);
-
+            getUrl();
         }
-    });
-}
-
-function FormTambahDataSekolah(){
-    $('body').find('#form_add').remove();
-    $('<div/>').attr('id','form_add').appendTo($('body')).dialog({
-        href: 'content/master_data_sekolah/form_add.php',
-        title: 'Tambah Data Sekolah',
-        top : 20,
-        width: 500,
-        modal: true,
-        buttons: [{
-            text:'Simpan',
-            iconCls:'icon-ok',
-            handler:function(){
-               SimpanDataSekolah();
-            }
-        },{
-            text:'Batal',
-            iconCls:'icon-cancel',
-            handler:function(){
-                $('#form_add').dialog('close').dialog('destroy');
-            }
-        }]
     });
 }
 
@@ -106,7 +76,7 @@ function FormUpdateDataSekolah(value){
             text:'Update',
             iconCls:'icon-ok',
             handler:function(){
-               UpdateDataSekolah();
+               prosesUpdateDataSekolah();
             }
         },{
             text:'Batal',
@@ -115,5 +85,52 @@ function FormUpdateDataSekolah(value){
                 $('#form_add').dialog('close').dialog('destroy');
             }
         }]
+    });
+}
+
+function prosesUpdateDataSekolah(){
+    var nama = $('#nama').val();
+    var alamat = $('#alamat').val();
+    var no_telepon = $('#no_telepon').val();
+
+    if(nama=="" || alamat=="" || no_telepon==""){
+        $.messager.alert('Konfirmasi', 'Silahkan Lengkapi Data !!!');
+        return;
+    }
+
+    $('#form_1').form('submit',{
+        url : "content/__proses/update_data_sekolah.php",
+        onSubmit:function(){
+            return $(this).form('enableValidation').form('validate');
+        },
+        success : function (data){
+            $('#form_add').dialog('close').dialog('destroy');
+            console.log(data);
+            getUrl();
+        }
+    });
+}
+
+function prosesDeleteDataSekolah(value){
+    var nama = value.nama;
+    var id = value.id;
+    $.messager.confirm({
+        title: 'Konfirmasi Hapus',
+        msg: 'Anda Yakin Akan Mengahapus Data '+nama+' Ini ? ',
+        fn: function(r){
+            if (r){
+                $.ajax({
+                    type: "POST",
+                    url: "content/__proses/hapus_data_sekolah.php",
+                    data : "id="+id,
+                    cache: false,
+                    success: function(data){
+                        $('#form_add').dialog('close').dialog('destroy');
+                        console.log(data);
+                        getUrl();
+                    }
+                });
+            }
+        }
     });
 }

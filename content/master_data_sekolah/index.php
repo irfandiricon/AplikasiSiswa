@@ -1,8 +1,7 @@
 <script src="content/master_data_sekolah/index.js"></script>
-
-<div class="card">
+<div class="card" style="overflow:scroll">
     <div class="card-body">
-        <button type="button" class="btn btn-info" onclick="FormTambahDataSekolah()">
+        <button type="button" class="btn btn-info" onclick="FormAddDataSekolah()">
             <span class="fa fa-plus-circle"></span> Tambah Data
         </button>
         <div class="table table-responsive">
@@ -19,7 +18,7 @@
                     <?php
                     include "../../koneksi_db/Koneksi.php";
                     $table_sekolah = TABLE_SEKOLAH;
-                    $query = "SELECT * FROM $db.$table_sekolah";
+                    $query = "SELECT * FROM $db.$table_sekolah WHERE flag_aktif='Y'";
                     $ex_query = mysqli_query($con, $query);
                     while($rows = mysqli_fetch_assoc($ex_query)){
                         $id = $rows['id'];
@@ -36,7 +35,7 @@
                             <button class="btn btn-info" onclick='<?php echo "FormUpdateDataSekolah($data)";?>'>
                                 <span class="fa fa-edit"></span>
                             </button>&nbsp;
-                            <button class="btn btn-danger"><span class="fa fa-trash"></span></button>
+                            <button class="btn btn-danger" onclick='<?php echo "prosesDeleteDataSekolah($data)";?>'><span class="fa fa-trash"></span></button>
                         </td>
                     </tr>
                     <?php
@@ -49,5 +48,3 @@
         </div>
     </div>
 </div>
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

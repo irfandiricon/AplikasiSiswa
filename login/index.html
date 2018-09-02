@@ -26,13 +26,22 @@
             </div>
             <div class="form">
                 <h2>Create an account</h2>
-                <form>
-                    <input type="text" placeholder="Username"/>
-                    <input type="password" placeholder="Password"/>
-                    <input type="email" placeholder="Email Address"/>
-                    <input type="tel" placeholder="Phone Number"/>
-                    <button>Register</button>
+                <form name="form_register" id="form_register" method="POST">
+                    <input required type="text" name="username" placeholder="Username"/>
+                    <input required type="password" name="password" placeholder="Password"/>
+                    <input required type="text" name="nama_lengkap" placeholder="Nama Lengkap"/>
+                    <input required type="email" name="email" placeholder="Email Address"/>
+                    <input required type="text" name="no_telp" placeholder="Phone Number"/>
+                    <select name="level">
+                        <option value="">PILIH LEVEL</option>
+                        <option value="3">SISWA</option>
+                        <option value="2">GURU</option>
+                    </select>
+                    <button type="button" onclick="proses_register()" > Register</button>
                 </form>
+                <hr width="100%">
+                <div id="pesan_register_gagal" align="center" style="color:red"></div>
+                <div id="pesan_register_sukses" align="center" style="color:green"></div>
             </div>
             <div class="cta"><a href="#">Forgot your password?</a></div>
         </div>
@@ -58,6 +67,33 @@
                     setSession(pesan);
                 }else{
                     $('#pesan').html("<b>"+pesan+"</b>");
+                    return;
+                }
+            }
+        });
+    }
+    function proses_register(){
+        var data = $('#form_register').serialize();
+        $.ajax({
+            url : '../__proses_register.php',
+            type : 'post',
+            cahce : false,
+            data : data,
+            dataType : 'json',
+            success : function(result){
+                var isValid = result.isValid;
+                var pesan = result.isPesan;
+                if(isValid==1){
+                    $('#pesan_register_sukses').show();
+                    $('#pesan_register_gagal').hide();
+                    $('#pesan_register_sukses').html("<b>"+pesan+"</b>");
+                    setTimeout(function(){
+                        window.location.reload();
+                    },1000);
+                }else{
+                    $('#pesan_register_sukses').hide();
+                    $('#pesan_register_gagal').show();
+                    $('#pesan_register_gagal').html("<b>"+pesan+"</b>");
                     return;
                 }
             }

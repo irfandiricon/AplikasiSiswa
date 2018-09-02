@@ -12,11 +12,9 @@ function setSession(session){
 
 $(function(){
     var hTbl = parseInt($('#panel-content').height());
-    $('#panel-content').css({'height' : hTbl});
+    $('#panel-content').css({});
     var $ex=$('#menu_aplikasi').find('.active');
-
     $('#_title').html('Home ');
-
     $(document).on("click", "a.menu-application", function(e){
         try{
             var $this=$(this);
@@ -59,4 +57,12 @@ function myparser(s){
     } else {
         return new Date();
     }
+}
+
+function getUrl(){
+    var $this=$('a.menu-application.active') ;
+    var isPath=$this.data('path');
+    var class_name_array=$('a.menu-application').attr('class').replace('active').trim().split(' ');
+    var url=class_name_array[class_name_array.length-1];
+    $('#panel-content').load(isPath+'/'+url);
 }

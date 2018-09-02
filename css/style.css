@@ -5414,7 +5414,6 @@ tbody tr td:last-child {
 .table > tfoot > tr > th,
 .table > thead > tr > td,
 .table > thead > tr > th {
-  line-height: 32px;
   vertical-align: top;
 }
 .table > thead > tr > th {

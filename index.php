@@ -6,8 +6,10 @@ $LEVEL = isset($_SESSION['level']) ? $_SESSION['level']:"";
 if ($USER_ID && $FLAG_AKTIF=="Y"){
     if($LEVEL == "1"){
         include "template.php";
-    }else{
-        include "template_user.php";
+    }elseif($LEVEL == "2"){
+        include "template_2.php";
+    }elseif($LEVEL == "3"){
+        include "template_3.php";
     }
 }else{
     echo "<script>window.location.href='login/';</script>";

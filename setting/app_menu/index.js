@@ -6,7 +6,7 @@ $(function (){
         singleSelect:true,
         fitColumns: true,
         pagination:true,
-        height : hTbl,
+        height : 300,
         pageSize:10,
         width : wTbl,
         url:'setting/master/master_data_group_menu.php',
