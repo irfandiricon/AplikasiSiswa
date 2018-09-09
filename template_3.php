@@ -23,7 +23,6 @@ $nama_aplikasi = NAMA_APPLICATION;
     <link rel="stylesheet" type="text/css" href="easyUi/themes/bootstrap/easyui.css">
     <link rel="stylesheet" type="text/css" href="easyUi/themes/icon.css">
     <link rel="stylesheet" type="text/css" href="easyUi/easyui-texteditor/texteditor.css">
-
     <link href="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 </head>
 
@@ -60,7 +59,7 @@ $nama_aplikasi = NAMA_APPLICATION;
     <script type="text/javascript" src="easyUi/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="easyUi/datagrid.detailview.js"></script>
     <script type="text/javascript" src="easyUi/easyui-texteditor/jquery.texteditor.js"></script>
-    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <!-- <script type="text/javascript" src="ckeditor/ckeditor.js"></script> -->
 
     <script src="js/lib/datatables/datatables.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>

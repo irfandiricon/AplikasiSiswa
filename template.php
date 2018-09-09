@@ -59,7 +59,7 @@ $nama_aplikasi = NAMA_APPLICATION;
     <script type="text/javascript" src="easyUi/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="easyUi/datagrid.detailview.js"></script>
     <script type="text/javascript" src="easyUi/easyui-texteditor/jquery.texteditor.js"></script>
-    <script type="text/javascript" src="ckeditor/ckeditor.js"></script>
+    <!-- <script type="text/javascript" src="ckeditor/ckeditor.js"></script> -->
 
     <script src="js/lib/datatables/datatables.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
@@ -70,7 +70,8 @@ $nama_aplikasi = NAMA_APPLICATION;
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
     <script src="js/lib/datatables/datatables-init.js"></script>
-
+    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script>
         $(function(){
             $('body').append("</bo"+"dy>");

@@ -7,7 +7,8 @@ $table_pertanyaan = TABLE_PERTANYAAN;
 $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
 $table_jawaban = TABLE_JAWABAN;
 
-$q1 = "SELECT id, pertanyaan FROM $db.$table_pertanyaan WHERE bidang_layanan='$id_bidang_layanan' and kelas IN ('$kelas')";
+$q1 = "SELECT id, pertanyaan FROM $db.$table_pertanyaan WHERE bidang_layanan='$id_bidang_layanan' and kelas IN ('$kelas')
+and created_by='$user_id_login_guru'";
 $ex_q1 = mysqli_query($con, $q1);
 $cr = mysqli_num_rows($ex_q1);
 if($cr == 0){

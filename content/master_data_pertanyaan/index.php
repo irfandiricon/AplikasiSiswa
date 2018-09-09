@@ -2,6 +2,7 @@
 include "../../koneksi_db/Koneksi.php";
 $table_pertanyaan = TABLE_PERTANYAAN;
 $table_bidang_layanan = TABLE_BIDANG_LAYANAN;
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
 ?>
 <script src="content/master_data_pertanyaan/index.js"></script>
 <div class="card" style="overflow:scroll">
@@ -24,6 +25,7 @@ $table_bidang_layanan = TABLE_BIDANG_LAYANAN;
                     <?php
                     $q1 = "SELECT a.id, a.pertanyaan, a.tujuan_layanan, b.deskripsi FROM $db.$table_pertanyaan AS a
                         LEFT JOIN $db.$table_bidang_layanan AS b ON a.bidang_layanan = b.id
+                        WHERE a.created_by='$user_id'
                         ORDER BY b.id, a.id";
                     $ex_q1 = mysqli_query($con, $q1);
                     while($r1 = mysqli_fetch_assoc($ex_q1)){

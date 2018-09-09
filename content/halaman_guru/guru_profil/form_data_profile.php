@@ -1,4 +1,4 @@
-<script src="content/halaman_siswa/siswa_profil/index.js"></script>
+<script src="content/halaman_guru/guru_profil/index.js"></script>
 <?php include "master_data_profile.php";?>
 <div class="card" style="overflow:scroll">
     <div class="card-body">
@@ -13,15 +13,15 @@
                         <tr>
                             <td width="150">Username</td>
                             <td>
-                                <input readonly name="user_id_siswa" value="<?php echo $user_id;?>" type="hidden">
+                                <input readonly name="user_id_guru" value="<?php echo $user_id;?>" type="hidden">
                                 <input readonly name="user_id_login" value="<?php echo $user_id_login;?>" type="hidden">
                                 <input readonly name="username" value="<?php echo $username;?>" class="form-control">
                             </td>
                             <td width="5"></td>
                         </tr>
                         <tr>
-                            <td>NIS</td>
-                            <td><input name="nis" value="<?php echo $nis;?>" class="form-control"></td>
+                            <td>NIP</td>
+                            <td><input name="nip" value="<?php echo $nip;?>" class="form-control"></td>
                             <td width="5"></td>
                         </tr>
                         <tr>
@@ -87,27 +87,6 @@
                 <div class="table table-responsive">
                     <table class="table" style="color:black">
                         <tbody>
-                          <tr>
-                              <td>Kelas</td>
-                              <td>
-                                  <select class="form-control" id="kelas" name="kelas">
-                                      <option value="">Pilih Data</option>
-                                      <?php
-                                      $class = array("10","11","12");
-                                      $class_id = array("10","11","12");
-                                      $jumlah = count($class);
-                                      for($i=0;$i<$jumlah;$i++){
-                                          $id = $class_id[$i];
-                                          $name = $class[$i];
-                                      ?>
-                                          <option value="<?php echo $id;?>" <?php if($kelas==$id){echo "selected";}?>><?php echo $name?></option>
-                                      <?php
-                                      }
-                                      ?>
-                                  </select>
-                              </td>
-                              <td width="5"></td>
-                          </tr>
                             <tr>
                                 <td width="150">Nama Sekolah</td>
                                 <td>
@@ -144,36 +123,6 @@
                                 <td><input name="no_telepon_sekolah" readonly id="no_telepon_sekolah" value="<?php echo $no_telepon_sekolah;?>" class="form-control"></td>
                                 <td width="5"></td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <span id="label_data_guru">
-                                        Nama Guru
-                                    </span>
-                                </td>
-                                <td>
-                                    <span id="master_data_guru">
-                                        <select class="form-control" id="nama_guru" name="nama_guru">
-                                            <option value="">PILIH DATA</option>
-                                            <?php
-                                            $q = "SELECT user_id, IF(nip IS NULL OR nip='',0,nip) as nip, UPPER(nama_lengkap) as nama_lengkap
-                                            from $db.$table_guru WHERE id_sekolah = '$id_sekolah'";
-                                            $ex_q = mysqli_query($con, $q);
-                                            while($r=mysqli_fetch_assoc($ex_q)){
-                                            $user_id = $r['user_id'];
-                                            $nama_lengkap = $r['nama_lengkap'];
-                                            $nip = $r['nip'];
-                                            ?>
-                                            <option value="<?php echo $user_id?>" <?php if($user_id==$user_id_guru){echo "selected";}?>>
-                                                <?php echo $nip." - ".$nama_lengkap;?>
-                                            </option>
-                                            <?php
-                                            }
-                                            ?>
-                                        </select>
-                                    </span>
-                                </td>
-                                <td width="5"></td>
-                            </tr>
                         </trbody>
                     </table>
                 </div>
@@ -182,11 +131,7 @@
         <hr width="100%">
         <div class="row">
             <div class="col-md-12">
-                <button class="btn btn-danger btn-lg" type="button" onclick="FormAwal()">
-                    <span class="fa fa-backward"></span> Batal
-                </button>
-                &nbsp;
-                </button><button class="btn btn-info btn-lg" type="button" onclick="ProsesUpdateDataProfile()">
+                <button class="btn btn-info btn-lg" type="button" onclick="ProsesUpdateDataProfile()">
                     <span class="fa fa-save"></span> Simpan Data
                 </button>
                 &nbsp;&nbsp;

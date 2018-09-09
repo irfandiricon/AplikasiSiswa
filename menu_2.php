@@ -35,18 +35,18 @@ if(empty($nik) || $nik==""){
                 </div>
                 <hr width="100%">
             </div>
-                <!-- <li>
-                    <a href='javascript:void(0)' data-path="content/halaman_siswa/siswa_profil" data-menu="Data Profile" class="menu-application index.php">
+                <li>
+                    <a href='javascript:void(0)' data-path="content/halaman_guru/guru_profil" data-menu="Data Profile" class="menu-application index.php">
                         <i><span class='fa fa-user'></span></i>
                         <font size="2">Data Profile</font>
                     </a>
                 </li>
                 <li>
-                    <a href='javascript:void(0)' data-path="content/halaman_siswa/siswa_angket" data-menu="Data Angket" class="menu-application index.php">
+                    <a href='javascript:void(0)' data-path="content/master_data_pertanyaan" data-menu="Data Pertanyaan" class="menu-application index.php">
                         <i><span class='fa fa-book'></span></i>
-                        <font size="2">Data Angket</font>
+                        <font size="2">Data Pertanyaan</font>
                     </a>
-                </li> -->
+                </li>
             </ul>
         </nav>
     </div>
