@@ -7,7 +7,7 @@ $table_pertanyaan = TABLE_PERTANYAAN;
 $created_by = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
 $table_jawaban = TABLE_JAWABAN;
 
-$q1 = "SELECT id, pertanyaan FROM $db.$table_pertanyaan WHERE bidang_layanan='$id_bidang_layanan' and kelas IN ('$kelas')
+$q1 = "SELECT id, pertanyaan FROM $db.$table_pertanyaan WHERE bidang_layanan='$id_bidang_layanan' and kelas IN ($kelas)
 and created_by='$user_id_login_guru'";
 $ex_q1 = mysqli_query($con, $q1);
 $cr = mysqli_num_rows($ex_q1);
@@ -20,14 +20,15 @@ if($cr == 0){
 </div>
 <?php
 }else{
-    $q2 = "SELECT COUNT(*) as total FROM $db.$table_jawaban where user_id='$created_by' and bidang_layanan='$id_bidang_layanan'";
+    $q2 = "SELECT * FROM $db.$table_jawaban where user_id='$created_by' and bidang_layanan='$id_bidang_layanan'";
     $ex_q2 = mysqli_query($con, $q2);
     $r2 = mysqli_fetch_assoc($ex_q2);
-    $total = $r2['total'];
+    $total = mysqli_num_rows($ex_q2);
+    $id_petanyaan = $r2['id_pertanyaan'];
     if($total > 0){
         echo "<div align='center'><font size='5' color='green'>
-              <b>Terima kasih telah menjawab <br> Halaman hasil penilaian sedang dalam tahap pengembangan !!!</b></font></div>";
-        include "form_hasil.php";
+              <b>Terima kasih telah menjawab, <br> data anda berhasil tersimpan !!!</b></font></div>";
+        //include "form_hasil.php";
     } else {
 ?>
     <form id="form_2" name="form_2" method="post">

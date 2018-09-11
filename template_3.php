@@ -2,8 +2,7 @@
 include "koneksi_db/Koneksi.php";
 $USER_ID = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
 $LEVEL = isset($_SESSION['level']) ? $_SESSION['level']:"";
-
-if ($USER_ID && $LEVEL){
+if ($USER_ID && $LEVEL=="3"){
 $nama_aplikasi = NAMA_APPLICATION;
 ?>
 <!DOCTYPE html>
@@ -60,7 +59,6 @@ $nama_aplikasi = NAMA_APPLICATION;
     <script type="text/javascript" src="easyUi/datagrid.detailview.js"></script>
     <script type="text/javascript" src="easyUi/easyui-texteditor/jquery.texteditor.js"></script>
     <!-- <script type="text/javascript" src="ckeditor/ckeditor.js"></script> -->
-
     <script src="js/lib/datatables/datatables.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>

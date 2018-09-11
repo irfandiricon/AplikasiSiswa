@@ -9,6 +9,9 @@ $jumlah = count($id_pertanyaan);
 foreach($jawaban as $option_num => $option_val){
     $data_2[] = $option_val;
 }
+$hasil = array_sum($data_2);
+$persentase = ($hasil / (5 * $jumlah)) * 100 ;
+
 for($i=0;$i<$jumlah;$i++){
     $data_1[] = $id_pertanyaan[$i];
 }
@@ -16,8 +19,8 @@ $data_pertanyaan = implode(",",$data_1);
 $data_jawaban = implode(",",$data_2);
 
 $json = array("isValid"=>0, "isPesan"=>array());
-$q1 = "INSERT INTO $db.$table_jawaban (user_id, bidang_layanan, id_pertanyaan, jawaban, created_date)
-  values ('$created_by', '$id_bidang_layanan', '$data_pertanyaan', '$data_jawaban', now())";
+$q1 = "INSERT INTO $db.$table_jawaban (user_id, bidang_layanan, id_pertanyaan, jawaban, jumlah, persentase, created_date)
+  values ('$created_by', '$id_bidang_layanan', '$data_pertanyaan', '$data_jawaban', '$hasil', '$persentase', now())";
 $ex_q1 = mysqli_query($con, $q1);
 if(!$ex_q1){
     $isValid = 0;

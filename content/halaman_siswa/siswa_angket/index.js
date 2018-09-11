@@ -1,3 +1,10 @@
+$(function(){
+    $('#tabel_hasil').dataTable({
+        "dom" : 'Bfrtip',
+        "buttons" : ['excel','print'],
+    });
+});
+
 function FormAwal(){
     $('#panel-content').load('content/halaman_siswa/siswa_angket/index.php');
 }

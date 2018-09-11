@@ -47,6 +47,28 @@ if(empty($nik) || $nik==""){
                         <font size="2">Data Pertanyaan</font>
                     </a>
                 </li>
+                <li>
+                    <a class='has-arrow' href='#' aria-expanded='false' data-path-group="Form Output">
+                        <font size="2">
+                            <i><span class='fa fa-book'></span></i>
+                            <span class='hide-menu'>Form Output</span>
+                        </font>
+                    </a>
+                    <ul aria-expanded='false' class='collapse'>
+                        <li>
+                            <a href='javascript:void(0)' data-path="content/halaman_hasil/persentase" data-menu="Persentase" class="menu-application index.php">
+                                <i><span class='fa fa-percent'></span></i> &nbsp;
+                                <font size="2">Persentase</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='javascript:void(0)' data-path="content/halaman_hasil/grafik" data-menu="Grafik" class="menu-application index.php">
+                                <i><span class='fa fa-bar-chart'></span></i> &nbsp;
+                                <font size="2">Grafik</font>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </div>
