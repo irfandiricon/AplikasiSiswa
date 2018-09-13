@@ -6,6 +6,12 @@
           <span class="fa fa-download"></span> Export To Excell
       </button>
       <hr width="100%"> -->
+        <?php
+        if($jumlah_siswa==0){
+            echo "<div align='center' valign='center'><font size='6' color='red'><b>Maaf, Anda belum memiliki siswa !!!</b></font></div>";
+            exit();
+        }
+        ?>
         <div class="table table-responsive table-bordered table-striped" style="overflow:scroll">
             <table width="2000" id="tabel_hasil" name="tabel_hasil" style="padding-bottom:20px">
                 <thead>

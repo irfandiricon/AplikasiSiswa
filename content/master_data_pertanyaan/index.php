@@ -25,7 +25,6 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
                     <?php
                     $q1 = "SELECT a.id, a.pertanyaan, a.tujuan_layanan, b.deskripsi FROM $db.$table_pertanyaan AS a
                         LEFT JOIN $db.$table_bidang_layanan AS b ON a.bidang_layanan = b.id
-                        WHERE a.created_by='$user_id'
                         ORDER BY b.id, a.id";
                     $ex_q1 = mysqli_query($con, $q1);
                     while($r1 = mysqli_fetch_assoc($ex_q1)){
