@@ -20,11 +20,20 @@
                     include "../../koneksi_db/Koneksi.php";
                     $table_siswa = TABLE_SISWA;
                     $table_sekolah = TABLE_SEKOLAH;
-                    $query = "SELECT a.user_id_login, nis,nama_lengkap,CONCAT(tempat_lahir,',',DATE_FORMAT(tanggal_lahir,'%d/%m/%Y')) AS tgl_lahir,
-                    jenis_kelamin, IF(a.flag_aktif='Y','Aktif','N. Aktif') AS flag_aktif, b.nama as nama_sekolah, a.flag_aktif as status_aktif
+                    $table_guru = TABLE_GURU;
+                    $level = isset($_SESSION['level']) ? $_SESSION['level']:"";
+                    $user_id_login = isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
+                    if($level==1){
+                        $parameter_level = "";
+                    }else{
+                        $parameter_level = " and c.user_id_login='$user_id_login'";
+                    }
+                    $query = "SELECT a.user_id_login, a.nis,a.nama_lengkap,CONCAT(a.tempat_lahir,',',DATE_FORMAT(a.tanggal_lahir,'%d/%m/%Y')) AS tgl_lahir,
+                    a.jenis_kelamin, IF(a.flag_aktif='Y','Aktif','N. Aktif') AS flag_aktif, b.nama AS nama_sekolah, a.flag_aktif AS status_aktif
                     FROM $db.$table_siswa AS a
                     LEFT JOIN $db.$table_sekolah AS b ON b.id = a.id_sekolah
-                    WHERE a.deleted_date IS NULL";
+                    LEFT JOIN $db.$table_guru AS c ON a.id_guru = c.user_id
+                    WHERE a.deleted_date IS NULL $parameter_level";
 
                     $ex_query = mysqli_query($con, $query);
                     while($rows = mysqli_fetch_assoc($ex_query)){

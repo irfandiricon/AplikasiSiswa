@@ -41,6 +41,12 @@ if(empty($nik) || $nik==""){
                         <font size="2">Data Profile</font>
                     </a>
                 </li>
+                <li>
+                    <a href='javascript:void(0)' data-path="content/master_data_siswa/" data-menu="Data Siswa" class="menu-application index.php">
+                        <i><span class='fa fa-user'></span></i>
+                        <font size="2">Data Siswa</font>
+                    </a>
+                </li>
                 <!-- <li>
                     <a href='javascript:void(0)' data-path="content/master_data_pertanyaan" data-menu="Data Pertanyaan" class="menu-application index.php">
                         <i><span class='fa fa-book'></span></i>
