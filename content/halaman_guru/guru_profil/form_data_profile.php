@@ -90,7 +90,7 @@
                             <tr>
                                 <td width="150">Nama Sekolah</td>
                                 <td>
-                                    <select class="form-control" id="nama_sekolah" name="nama_sekolah" onchange="getDataSekolah(this.value)">
+                                    <select readonly disabled class="form-control" id="nama_sekolah" name="nama_sekolah" onchange="getDataSekolah(this.value)">
                                         <option value="">PILIH DATA</option>
                                         <?php
                                         $q2 = "SELECT id, nama FROM $db.$table_sekolah where flag_aktif='Y' order by nama";

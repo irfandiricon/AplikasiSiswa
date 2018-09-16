@@ -11,9 +11,10 @@
     $email = isset($_POST['email']) ? $_POST['email']:"";
     $no_telp = isset($_POST['no_telp']) ? $_POST['no_telp']:"";
     $level = isset($_POST['level']) ? $_POST['level']:"";
+    $id_sekolah = isset($_POST['sekolah']) ? $_POST['sekolah']:"";
 
     $json = array("isValid"=>0, "isPesan"=>array());
-    if(empty($username) || empty($password) || empty($email) || empty($email) || empty($no_telp) || empty($level)){
+    if(empty($username) || empty($password) || empty($email) || empty($email) || empty($no_telp) || empty($level) || empty($id_sekolah)){
         $isValid = 0;
         $isPesan = "Silahkan lengkapi data !!!";
     }else{
@@ -38,11 +39,11 @@
                 $isPesan = "Data gagal tersimpan, silahkan coba lagi atau hubungi administrator !!!, Error : ".mysqli_error($con);
             }else{
                 if($level == 2){
-                    $q4 = "INSERT INTO $db.$table_guru (user_id_login, nama_lengkap, email, no_telp, created_date)
-                      values('$user_id','$nama_lengkap','$email','$no_telp',now())";
+                    $q4 = "INSERT INTO $db.$table_guru (user_id_login, nama_lengkap, email, no_telp, id_sekolah, created_date)
+                      values('$user_id','$nama_lengkap','$email','$no_telp','$id_sekolah',now())";
                 }elseif($level==3){
-                    $q4 = "INSERT INTO $db.$table_siswa (user_id_login, nama_lengkap, email, no_telp, created_date)
-                      values('$user_id','$nama_lengkap','$email','$no_telp',now())";
+                    $q4 = "INSERT INTO $db.$table_siswa (user_id_login, nama_lengkap, email, no_telp, id_sekolah, created_date)
+                      values('$user_id','$nama_lengkap','$email','$no_telp','$id_sekolah',now())";
                 }
                 $ex_q4 = mysqli_query($con, $q4);
                 if(!$ex_q4){

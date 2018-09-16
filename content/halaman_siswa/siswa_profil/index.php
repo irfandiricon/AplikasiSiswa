@@ -19,6 +19,9 @@
             <div class="col-md-12">
                 <button class="btn btn-info btn-lg" type="button" onclick="FormUpdateData()">
                     <span class="fa fa-edit"></span> Update Data
+                </button> &nbsp;
+                <button class="btn btn-info btn-lg" type="button" onclick="FormUpdatePassword()">
+                    <span class="fa fa-edit"></span> Update Password
                 </button>
             </div>
         </div>

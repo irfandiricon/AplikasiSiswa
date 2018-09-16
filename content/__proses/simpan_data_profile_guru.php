@@ -48,7 +48,7 @@ if($nama_sekolah!="dll"){
 }
 
 $q3 = "UPDATE $db.$table_guru SET nip='$nip', nama_lengkap='$nama_lengkap', tempat_lahir='$tempat_lahir', tanggal_lahir='$tgl_lahir',
-  jenis_kelamin='$jenis_kelamin', alamat='$alamat', email='$email', no_telp='$no_telp', id_sekolah='$id_sekolah', updated_date=now(),
+  jenis_kelamin='$jenis_kelamin', alamat='$alamat', email='$email', no_telp='$no_telp', updated_date=now(),
   updated_by='$user_id_login' where user_id='$user_id_guru'";
 $ex_q3 = mysqli_query($con, $q3);
 

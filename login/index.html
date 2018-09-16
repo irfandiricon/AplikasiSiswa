@@ -32,11 +32,12 @@
                     <input required type="text" name="nama_lengkap" placeholder="Nama Lengkap"/>
                     <input required type="email" name="email" placeholder="Email Address"/>
                     <input required type="text" name="no_telp" placeholder="Phone Number"/>
-                    <select name="level">
+                    <select name="level" id="level" onchange="ChangeLevel(this.value)">
                         <option value="">PILIH LEVEL</option>
                         <option value="3">SISWA</option>
                         <option value="2">GURU</option>
                     </select>
+                    <span id="label_sekolah"></span>
                     <button type="button" onclick="proses_register()" > Register</button>
                 </form>
                 <hr width="100%">
@@ -57,7 +58,7 @@
         $.ajax({
             url : '../__proses_login.php',
             type : 'post',
-            cahce : false,
+            cache : false,
             data : data,
             dataType : 'json',
             success : function(result){
@@ -73,11 +74,20 @@
         });
     }
     function proses_register(){
+        var level = document.getElementById('level').value;
+        if(level==2){
+            var sekolah = document.getElementById('sekolah').value;
+            if(sekolah==""){
+                $('#pesan_register_gagal').html("<b>Silahkan Lengkapi Data !!!</b>");
+                return;
+            }
+        }
+
         var data = $('#form_register').serialize();
         $.ajax({
             url : '../__proses_register.php',
             type : 'post',
-            cahce : false,
+            cache : false,
             data : data,
             dataType : 'json',
             success : function(result){
@@ -98,5 +108,21 @@
                 }
             }
         });
+    }
+
+    function ChangeLevel(level){
+        if(level==2 || level==3){
+            $('#label_sekolah').show();
+            $.ajax({
+                url : 'data_sekolah.php',
+                type : 'post',
+                cache : false,
+                success : function(result){
+                    $('#label_sekolah').html(result);
+                }
+            });
+        }else{
+            $('#label_sekolah').hide();
+        }
     }
 </script>

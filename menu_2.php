@@ -73,6 +73,12 @@ if(empty($nik) || $nik==""){
                                 <font size="2">Grafik</font>
                             </a>
                         </li>
+                        <li>
+                            <a href='javascript:void(0)' data-path="content/halaman_hasil/perbandingan" data-menu="Tabel Perbandingan" class="menu-application index.php">
+                                <i><span class='fa fa-table'></span></i> &nbsp;
+                                <font size="2">Perbandingan</font>
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>

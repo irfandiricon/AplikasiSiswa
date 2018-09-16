@@ -9,10 +9,11 @@ function FormAwal(){
     $('#panel-content').load('content/master_data_siswa/index.php');
 }
 
-function FormUpdateDataSiswa(user_id, status_aktif){
+function FormUpdateDataSiswa(user_id, status_aktif, kelas){
     var rows = {
         flag_aktif : status_aktif,
-        user_id : user_id
+        user_id : user_id,
+        kelas : kelas
     }
 
     $('body').find('#form_add').remove();

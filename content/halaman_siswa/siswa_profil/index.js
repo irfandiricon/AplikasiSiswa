@@ -3,9 +3,12 @@ function FormAwal(){
 }
 
 function FormUpdateData(){
-      $('#panel-content').load('content/halaman_siswa/siswa_profil/form_data_profile.php');
+    $('#panel-content').load('content/halaman_siswa/siswa_profil/form_data_profile.php');
 }
 
+function FormUpdatePassword(){
+    $('#panel-content').load('content/halaman_siswa/siswa_profil/form_data_password.php');
+}
 function ProsesUpdateDataProfile(){
     var formData = $('#form1').serialize();
     $.ajax({
@@ -33,6 +36,57 @@ function ProsesUpdateDataProfile(){
             }
         }
     });
+}
+
+function CekPassword(){
+    var new_password_1 = $('#new_password_1').val();
+    var new_password_2 = $('#new_password_2').val();
+    if(new_password_1=="" || new_password_2==""){
+        $('#cekpassword').html("<font color='red'><span class='fa fa-exclamation-circle'></span></font>");
+    }else if(new_password_1 == new_password_2){
+        $('#cekpassword').html("<font color='green'><span class='fa fa-check-circle'></span></font>");
+    }else{
+        $('#cekpassword').html("<font color='red'><span class='fa fa-exclamation-circle'></span></font>");
+    }
+}
+
+function ProsesUpdatePassword(){
+    var new_password_1 = $('#new_password_1').val();
+    var new_password_2 = $('#new_password_2').val();
+    if(new_password_1=="" || new_password_2==""){
+        alert('Wrong Password !!!');
+        return;
+    }else if(new_password_1 == new_password_2){
+        var formData = $('#form1').serialize();
+        $.ajax({
+            url : 'content/__proses/simpan_data_password.php',
+            type : 'post',
+            cahce : false,
+            data : formData,
+            dataType : 'json',
+            beforeSend : function(){
+                $("#loading").show();
+                $("#loading").html('<img src="images/loading.gif" width=50 height=50>');
+            },
+            success : function(result){
+                var isValid = result.isValid;
+                var pesan = result.isPesan;
+                if(isValid==1){
+                    $("#loading").html('<font color="green" size="4"><b>'+pesan+'</b></font>');
+                    setTimeout(function(){
+                        FormAwal();
+                    },1000);
+                    return;
+                }else{
+                    $("#loading").html('<font color="red" size="4"><b>'+pesan+'</b></font>');
+                    return;
+                }
+            }
+        });
+    }else{
+        alert('Wrong Password !!!');
+        return;
+    }
 }
 
 function getDataSekolah(value){

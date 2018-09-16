@@ -90,22 +90,7 @@
                           <tr>
                               <td>Kelas</td>
                               <td>
-                                  <select class="form-control" id="kelas" name="kelas">
-                                      <option value="">Pilih Data</option>
-                                      <?php
-                                      $class = array("10","11","12");
-                                      $class_id = array("10","11","12");
-                                      $jumlah = count($class);
-                                      for($i=0;$i<$jumlah;$i++){
-                                          $id = $class_id[$i];
-                                          $name = $class[$i];
-                                      ?>
-                                          <option value="<?php echo $id;?>" <?php if($kelas==$id){echo "selected";}?>><?php echo $name?></option>
-                                      <?php
-                                      }
-                                      ?>
-                                  </select>
-                              </td>
+                                <input class="form-control" value="<?php echo $kelas;?>" readonly name="kelas" id="kelas"></td>
                               <td width="5"></td>
                           </tr>
                             <tr>
