@@ -32,7 +32,6 @@ $nama_aplikasi = NAMA_APPLICATION;
 </div>
 <div class="fix-header fix-sidebar" style="overflow:hidden">
     <div id="main-wrapper" >
-
         <?php
           include "head.php";
         ?>
@@ -70,7 +69,7 @@ $nama_aplikasi = NAMA_APPLICATION;
     <script src="js/lib/datatables/cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
     <script src="js/lib/datatables/datatables-init.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-    <script src="`https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script>
         $(function(){
             $('body').append("</bo"+"dy>");
@@ -98,7 +97,7 @@ $nama_aplikasi = NAMA_APPLICATION;
             color : black;
         }
         .table-striped tbody tr:nth-of-type(2n+1){
-            background-color: rgba(62, 227, 11, 0.1);
+            background-color: rgba(59, 188, 142, 0.1);
         }
         input {
           overflow: visible;

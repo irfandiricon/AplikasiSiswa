@@ -44,7 +44,7 @@ if(empty($nik) || $nik==""){
                 <li>
                     <a href='javascript:void(0)' data-path="content/halaman_siswa/siswa_angket" data-menu="Data Angket" class="menu-application index.php">
                         <i><span class='fa fa-book'></span></i>
-                        <font size="2">Data Angket</font>
+                        <font size="2">Kuesioner</font>
                     </a>
                 </li>
             </ul>

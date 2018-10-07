@@ -57,26 +57,51 @@ if(empty($nik) || $nik==""){
                     <a class='has-arrow' href='#' aria-expanded='false' data-path-group="Form Output">
                         <font size="2">
                             <i><span class='fa fa-book'></span></i>
-                            <span class='hide-menu'>Form Output</span>
+                            <span class='hide-menu'>Asesmen</span>
                         </font>
                     </a>
                     <ul aria-expanded='false' class='collapse'>
                         <li>
                             <a href='javascript:void(0)' data-path="content/halaman_hasil/persentase" data-menu="Persentase" class="menu-application index.php">
                                 <i><span class='fa fa-percent'></span></i> &nbsp;
-                                <font size="2">Persentase</font>
+                                <font size="2">Hasil Asesmen</font>
                             </a>
                         </li>
                         <li>
                             <a href='javascript:void(0)' data-path="content/halaman_hasil/grafik" data-menu="Grafik" class="menu-application index.php">
-                                <i><span class='fa fa-bar-chart'></span></i> &nbsp;
+                                <i><span class='fa fa-bar-chart'></span></i>&nbsp;
                                 <font size="2">Grafik</font>
                             </a>
                         </li>
                         <li>
                             <a href='javascript:void(0)' data-path="content/halaman_hasil/perbandingan" data-menu="Tabel Perbandingan" class="menu-application index.php">
                                 <i><span class='fa fa-table'></span></i> &nbsp;
-                                <font size="2">Perbandingan</font>
+                                <font size="2">Tabel Kebutuhan Siswa</font>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a class='has-arrow' href='#' aria-expanded='false' data-path-group="Form Output">
+                        <font size="2">
+                            <i><span class='fa fa-book'></span></i>
+                            <span class='hide-menu'>Program Kerja</span>
+                        </font>
+                    </a>
+                    <ul aria-expanded='false' class='collapse'>
+                        <li>
+                            <a href='javascript:void(0)' data-path="content/halaman_program_kerja/data_action_plan"
+                            data-menu="Tabel Action Plan" class="menu-application index.php">
+                                <i><span class='fa fa-table'></span></i>&nbsp;
+                                <font size="2">Tabel Action Plan</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href='javascript:void(0)' data-path="content/halaman_program_kerja/data_download"
+                            data-menu="Download" class="menu-application index.php">
+                                <i><span class='fa fa-download'></span></i>&nbsp;
+                                <font size="2">Download</font>
                             </a>
                         </li>
                     </ul>

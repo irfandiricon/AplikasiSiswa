@@ -1,7 +1,8 @@
 <?php
-define('NAMA_APPLICATION','ADMINISTRASI SISWA');
+define('NAMA_APPLICATION','E-Administrasi BK');
 define('NAMA_DIRECTORY','AplikasiSiswa');
 define('DIRECTORY_FOTO_PROFILE','foto_profil');
+define('FILE_LOCATION','file_upload/');
 
 define('DATABASE','app_siswa');
 define('HOST','localhost:3306');
@@ -23,3 +24,8 @@ define('TABLE_METODE_LAYANAN','app_metode_layanan');
 define('TABLE_MEDIA_LAYANAN','app_media_layanan');
 define('TABLE_PERTANYAAN','app_pertanyaan');
 define('TABLE_JAWABAN','app_jawaban');
+define('TABLE_HOME','app_home');
+define('TABLE_ABOUT','app_about');
+define('TABLE_SUPPORT','app_support');
+define('TABLE_PESAN','app_pesan');
+define('TABLE_DOWNLOAD','app_download');

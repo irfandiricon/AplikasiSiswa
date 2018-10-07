@@ -13,7 +13,7 @@ if(empty($kelas)){
     $kelas = $kelas;
 }
 
-$q1 = "SELECT id, pertanyaan FROM $db.$table_pertanyaan WHERE bidang_layanan='$id_bidang_layanan' and kelas like '%$kelas%'";
+$q1 = "SELECT id, pertanyaan FROM $db.$table_pertanyaan WHERE bidang_layanan='$id_bidang_layanan' ";
 $ex_q1 = mysqli_query($con, $q1);
 $cr = mysqli_num_rows($ex_q1);
 if($cr == 0){

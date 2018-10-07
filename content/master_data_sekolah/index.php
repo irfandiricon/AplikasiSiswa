@@ -3,7 +3,7 @@
     <div class="card-body">
         <button type="button" class="btn btn-info" onclick="FormAddDataSekolah()">
             <span class="fa fa-plus-circle"></span> Tambah Data
-        </button>
+        </button><hr width="100%">
         <div class="table table-responsive">
             <table class="display nowrap table table-hover table-striped table-bordered" id="tabel_sekolah" cellspacing="0" width="100%">
                 <thead>

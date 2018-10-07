@@ -29,9 +29,7 @@ $(function(){
             $ex.removeClass('active');
             $this.addClass('active');
             var dataTable="path="+isPath+"&url="+url;
-
             $('#panel-content').load(isPath+'/'+url);
-
             $('#_title').html(isMenu);
         }catch(e){
             alert(e);

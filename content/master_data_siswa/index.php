@@ -9,7 +9,7 @@
                         <td width="200">Nama Lengkap</td>
                         <td width="200">Tempat & Tgl Lahir</td>
                         <td width="100">JK</td>
-                        <td width="150">Sekolah</td>
+                        <td width="100">Kelas</td>
                         <td width="100">Status</td>
                         <td width="120"></td>
                     </tr>
@@ -55,7 +55,7 @@
                         <td><?php echo $nama_lengkap;?></td>
                         <td><?php echo $tgl_lahir;?></td>
                         <td><?php echo $jenis_kelamin;?></td>
-                        <td><?php echo $nama_sekolah;?></td>
+                        <td><?php echo $kelas;?></td>
                         <td><?php echo $flag_aktif;?></td>
                         <td align="center">
                             <button class="btn btn-info" onclick="<?php echo $onclick_update;?>">

@@ -1,8 +1,9 @@
 <div class="header">
     <nav class="navbar top-navbar navbar-expand-md navbar-light">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.php">
-                <span><b><?php echo $nama_aplikasi;?></b></span>
+            <span class="fa fa-users"></span>
+            <a class="navbar-brand" href="application/">
+                &nbsp;<span><b><?php echo $nama_aplikasi;?></b></span>
             </a>
         </div>
 

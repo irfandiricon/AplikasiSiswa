@@ -1,4 +1,5 @@
 <?php
+
 if(!isset($_SESSION)){session_start();}
 $rootPath=$_SERVER['DOCUMENT_ROOT'];
 require_once ($rootPath."/AplikasiSiswa/".'__setting.php');
