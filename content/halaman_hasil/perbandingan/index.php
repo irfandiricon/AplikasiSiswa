@@ -1,3 +1,4 @@
+<?php include "../master/master_data_output.php";?>
 <script src="content/halaman_hasil/perbandingan/index.js"></script>
 <div class="card" style="overflow:scroll;height:450px">
     <div class="card-body">

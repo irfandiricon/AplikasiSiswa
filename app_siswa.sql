@@ -12,9 +12,9 @@ MySQL - 5.5.5-10.1.19-MariaDB : Database - app_siswa
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`app_siswa` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`u721770811_sas` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `app_siswa`;
+USE `u721770811_sas`;
 
 /*Table structure for table `app_about` */
 
@@ -32,8 +32,6 @@ CREATE TABLE `app_about` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 /*Data for the table `app_about` */
-
-insert  into `app_about`(`id`,`isi`,`created_date`,`created_by`,`updated_date`,`updated_by`,`status_aktif`) values (2,'<b><font color=\"rgb(246, 178, 107)\">OKE DICOBA YA, SIAAP. OK</font><br></b>','2018-10-06',1,'2018-10-06',1,'1');
 
 /*Table structure for table `app_bidang_layanan` */
 
@@ -119,8 +117,6 @@ CREATE TABLE `app_home` (
 
 /*Data for the table `app_home` */
 
-insert  into `app_home`(`id`,`judul`,`isi`,`created_date`,`created_by`,`updated_date`,`updated_by`,`status_aktif`) values (9,'Data 4','<h2><font face=\"courier new\">Ayo, Ini tulisan pertama Ya<br></font></h2>','2018-10-02',1,'2018-10-07',1,'1');
-
 /*Table structure for table `app_jawaban` */
 
 DROP TABLE IF EXISTS `app_jawaban`;
@@ -135,11 +131,11 @@ CREATE TABLE `app_jawaban` (
   `persentase` int(11) DEFAULT '0',
   `created_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 
 /*Data for the table `app_jawaban` */
 
-insert  into `app_jawaban`(`id`,`user_id`,`bidang_layanan`,`id_pertanyaan`,`jawaban`,`jumlah`,`persentase`,`created_date`) values (29,2,'1','1,2,3,4,5,6,7,8,9,10,11,12','3,4,5,2,2,4,3,4,3,4,3,4',41,68,'2018-09-14 07:05:19'),(30,2,'2','13,14,15,16,17,18,19,20,21,22,23,24','3,4,3,3,3,3,3,3,4,4,1,3',37,62,'2018-09-14 07:05:45'),(31,2,'3','26,27,28','3,2,3',8,53,'2018-09-14 07:05:54'),(32,2,'4','29,30,31','4,3,1',8,53,'2018-09-14 07:06:04'),(34,3,'1','1,2,3,4,5,6,7,8,9,10,11,12','1,1,1,1,1,1,1,1,1,1,1,1',12,20,'2018-09-18 21:01:51'),(35,3,'2','13,14,15,16,17,18,19,20,21,22,23,24','1,1,1,1,1,1,1,1,1,1,1,1',12,20,'2018-09-18 21:01:56'),(36,3,'3','26,27,28','1,1,1',3,20,'2018-09-18 21:02:01'),(37,3,'4','29,30,31','1,1,1',3,20,'2018-09-18 21:02:06');
+insert  into `app_jawaban`(`id`,`user_id`,`bidang_layanan`,`id_pertanyaan`,`jawaban`,`jumlah`,`persentase`,`created_date`) values (29,2,'1','1,2,3,4,5,6,7,8,9,10,11,12','3,4,5,2,2,4,3,4,3,4,3,4',41,68,'2018-09-14 07:05:19'),(30,2,'2','13,14,15,16,17,18,19,20,21,22,23,24','3,4,3,3,3,3,3,3,4,4,1,3',37,62,'2018-09-14 07:05:45'),(31,2,'3','26,27,28','3,2,3',8,53,'2018-09-14 07:05:54'),(32,2,'4','29,30,31','4,3,1',8,53,'2018-09-14 07:06:04'),(34,3,'1','1,2,3,4,5,6,7,8,9,10,11,12','1,1,1,1,1,1,1,1,1,1,1,1',12,20,'2018-09-18 21:01:51'),(35,3,'2','13,14,15,16,17,18,19,20,21,22,23,24','1,1,1,1,1,1,1,1,1,1,1,1',12,20,'2018-09-18 21:01:56'),(36,3,'3','26,27,28','1,1,1',3,20,'2018-09-18 21:02:01'),(37,3,'4','29,30,31','1,1,1',3,20,'2018-09-18 21:02:06'),(38,13,'1','1,2,3,4,5,6,7,8,9,10,11,12','5,5,5,5,5,5,5,5,5,5,5,5',60,100,'2018-10-09 20:56:47'),(39,13,'2','13,14,15,16,17,18,19,20,21,22,23,24','5,5,5,5,5,5,5,5,5,5,5,5',60,100,'2018-10-09 20:57:10'),(40,13,'3','26,27,28','5,5,5',15,100,'2018-10-09 20:57:18'),(41,13,'4','29,30,31','5,5,5',15,100,'2018-10-09 20:57:26'),(42,5,'1','1,2,3,4,5,6,7,8,9,10,11,12','4,4,3,1,5,5,4,3,4,1,2,1',37,62,'2018-10-10 23:28:44'),(43,5,'2','13,14,15,16,17,18,19,20,21,22,23,24','3,4,3,4,5,2,2,1,2,4,3,1',34,57,'2018-10-10 23:29:03'),(44,5,'3','26,27,28','2,2,3',7,47,'2018-10-10 23:29:10'),(45,5,'4','29,30,31','4,3,5',12,80,'2018-10-10 23:29:18');
 
 /*Table structure for table `app_komponen_layanan` */
 
@@ -295,8 +291,6 @@ CREATE TABLE `app_pesan` (
 
 /*Data for the table `app_pesan` */
 
-insert  into `app_pesan`(`id`,`email`,`no_telp`,`nama_lengkap`,`subjek`,`pesan`,`is_read`,`is_delete`,`created_date`,`deleted_date`,`deleted_by`) values (1,'irfandi.ricon@gmail.com','0821212121','Irfandi','Tolong bantu saya','Oke','1','1','2018-10-07 07:08:50','2018-10-07 09:05:30',1),(2,'irfandiricon1993@gmail.com','08721313131','Irfandi R','Tes','Tes 2','1','0','2018-10-07 08:19:35',NULL,NULL);
-
 /*Table structure for table `app_sekolah` */
 
 DROP TABLE IF EXISTS `app_sekolah`;
@@ -388,8 +382,6 @@ CREATE TABLE `app_support` (
 
 /*Data for the table `app_support` */
 
-insert  into `app_support`(`id`,`isi`,`created_date`,`created_by`,`updated_date`,`updated_by`,`status_aktif`) values (1,'TESSS','2018-10-06',1,'2018-10-06',1,'1');
-
 /*Table structure for table `app_user` */
 
 DROP TABLE IF EXISTS `app_user`;
@@ -414,7 +406,7 @@ CREATE TABLE `app_user` (
 
 /*Data for the table `app_user` */
 
-insert  into `app_user`(`user_id`,`username`,`password`,`nama_lengkap`,`level`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`,`last_login`,`verifikasi`) values (1,'irfandi','202cb962ac59075b964b07152d234b70','Irfandi Ricon','1','2018-08-04 13:31:12',NULL,NULL,NULL,NULL,NULL,'Y',NULL,NULL),(2,'afa','202cb962ac59075b964b07152d234b70','Afa','3','2018-09-01 03:52:14',NULL,'2018-09-16 21:19:35',6,NULL,NULL,'Y',NULL,NULL),(3,'lilis','202cb962ac59075b964b07152d234b70','Lilis','3','2018-09-01 03:52:58',NULL,'2018-09-16 21:20:17',6,NULL,NULL,'Y',NULL,NULL),(4,'imam_mawardi','202cb962ac59075b964b07152d234b70','Imam Mawardi','3','2018-09-01 03:55:04',NULL,NULL,NULL,'2018-09-03 00:50:01',1,'N',NULL,NULL),(5,'masitoh_noer','202cb962ac59075b964b07152d234b70','Masitoh noer ','3','2018-09-01 03:55:41',NULL,'2018-09-16 21:20:21',6,'2018-09-17 00:09:33',9,'N',NULL,NULL),(6,'user_guru1','202cb962ac59075b964b07152d234b70','Guru 1','2','2018-09-03 00:57:18',NULL,NULL,NULL,NULL,NULL,'Y',NULL,NULL),(7,'user_guru2','202cb962ac59075b964b07152d234b70','Guru 2','2','2018-09-03 00:57:36',NULL,NULL,NULL,'2018-09-17 00:09:49',9,'N',NULL,NULL),(8,'user_guru3','202cb962ac59075b964b07152d234b70','Guru 3','2','2018-09-03 00:57:50',NULL,'2018-09-03 00:58:23',1,'2018-09-17 00:09:47',9,'N',NULL,NULL),(9,'sukma','202cb962ac59075b964b07152d234b70','Sukma','1','2018-09-03 04:27:13',NULL,NULL,NULL,NULL,NULL,'Y',NULL,NULL),(10,'user_guru4','202cb962ac59075b964b07152d234b70','Guru 4','2','2018-09-16 23:40:33',NULL,NULL,NULL,'2018-09-17 00:09:45',9,'N',NULL,NULL),(11,'user_guru5','202cb962ac59075b964b07152d234b70','Guru 5','2','2018-09-17 00:07:53',NULL,'2018-09-17 00:11:56',9,NULL,NULL,'Y',NULL,NULL),(12,'siswa_1','202cb962ac59075b964b07152d234b70','Siswa 1','3','2018-09-17 00:16:36',NULL,'2018-09-17 01:55:22',14,NULL,NULL,'Y',NULL,NULL),(13,'siswa_2','202cb962ac59075b964b07152d234b70','Siswa 2','3','2018-09-17 00:22:29',NULL,'2018-09-17 00:29:35',6,NULL,NULL,'Y',NULL,NULL),(14,'user_guru6','202cb962ac59075b964b07152d234b70','Guru 6','2','2018-09-17 01:21:21',NULL,'2018-09-17 01:55:02',9,NULL,NULL,'Y',NULL,NULL);
+insert  into `app_user`(`user_id`,`username`,`password`,`nama_lengkap`,`level`,`created_date`,`created_by`,`updated_date`,`updated_by`,`deleted_date`,`deleted_by`,`flag_aktif`,`last_login`,`verifikasi`) values (1,'irfandi','202cb962ac59075b964b07152d234b70','Irfandi Ricon','1','2018-08-04 13:31:12',NULL,NULL,NULL,NULL,NULL,'Y',NULL,NULL),(2,'afa','202cb962ac59075b964b07152d234b70','Afa','3','2018-09-01 03:52:14',NULL,'2018-09-16 21:19:35',6,NULL,NULL,'Y',NULL,NULL),(3,'lilis','202cb962ac59075b964b07152d234b70','Lilis','3','2018-09-01 03:52:58',NULL,'2018-09-16 21:20:17',6,NULL,NULL,'Y',NULL,NULL),(4,'imam_mawardi','202cb962ac59075b964b07152d234b70','Imam Mawardi','3','2018-09-01 03:55:04',NULL,NULL,NULL,'2018-09-03 00:50:01',1,'N',NULL,NULL),(5,'masitoh_noer','202cb962ac59075b964b07152d234b70','Masitoh noer ','3','2018-09-01 03:55:41',NULL,'2018-09-16 21:20:21',6,'2018-09-17 00:09:33',9,'Y',NULL,NULL),(6,'user_guru1','202cb962ac59075b964b07152d234b70','Guru 1','2','2018-09-03 00:57:18',NULL,NULL,NULL,NULL,NULL,'Y',NULL,NULL),(7,'user_guru2','202cb962ac59075b964b07152d234b70','Guru 2','2','2018-09-03 00:57:36',NULL,NULL,NULL,'2018-09-17 00:09:49',9,'N',NULL,NULL),(8,'user_guru3','202cb962ac59075b964b07152d234b70','Guru 3','2','2018-09-03 00:57:50',NULL,'2018-09-03 00:58:23',1,'2018-09-17 00:09:47',9,'N',NULL,NULL),(9,'sukma','202cb962ac59075b964b07152d234b70','Sukma','1','2018-09-03 04:27:13',NULL,NULL,NULL,NULL,NULL,'Y',NULL,NULL),(10,'user_guru4','202cb962ac59075b964b07152d234b70','Guru 4','2','2018-09-16 23:40:33',NULL,NULL,NULL,'2018-09-17 00:09:45',9,'N',NULL,NULL),(11,'user_guru5','202cb962ac59075b964b07152d234b70','Guru 5','2','2018-09-17 00:07:53',NULL,'2018-09-17 00:11:56',9,NULL,NULL,'Y',NULL,NULL),(12,'siswa_1','202cb962ac59075b964b07152d234b70','Siswa 1','3','2018-09-17 00:16:36',NULL,'2018-09-17 01:55:22',14,NULL,NULL,'Y',NULL,NULL),(13,'siswa_2','202cb962ac59075b964b07152d234b70','Siswa 2','3','2018-09-17 00:22:29',NULL,'2018-09-17 00:29:35',6,NULL,NULL,'Y',NULL,NULL),(14,'user_guru6','202cb962ac59075b964b07152d234b70','Guru 6','2','2018-09-17 01:21:21',NULL,'2018-09-17 01:55:02',9,NULL,NULL,'Y',NULL,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
