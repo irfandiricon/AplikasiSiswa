@@ -33,7 +33,7 @@
                         <td><?php echo $nama_file;?></td>
                         <td><?php echo $path_file;?></td>
                         <td align="center">
-                            <button class="btn btn-danger" onclick='<?php echo "prosesDeleteDataSekolah($data)";?>'><span class="fa fa-trash"></span></button>
+                            <button class="btn btn-danger" onclick='<?php echo "prosesDelete($data)";?>'><span class="fa fa-trash"></span></button>
                         </td>
                         <td></td>
                     </tr>
