@@ -26,7 +26,7 @@ $ex = mysqli_query($con, $q);
 <div class="card" style="overflow:scroll">
     <div class="card-body">
         <div class="panel panel-default panel-heading" style="width:1500px;padding-right:20px;">
-            <table class="table table-striped table-bordered" style="">
+            <table class="table table-striped table-bordered" id="table_action_plan">
                 <thead>
                     <tr>
                         <td width="100"><b>Bidang</b></td>
@@ -38,6 +38,8 @@ $ex = mysqli_query($con, $q);
                         <td width="150"><b>Media</b></td>
                         <td width="150"><b>Evaluasi</b></td>
                     </tr>
+                </thead>
+                <tbody>
                     <?php
                     while($row = mysqli_fetch_assoc($ex)){
                         $bidang_layanan = $row['bidang_layanan'];
@@ -72,7 +74,7 @@ $ex = mysqli_query($con, $q);
                     <?php
                     }
                     ?>
-                </thead>
+                </body>
             </table>
         </div>
         <hr width="100%">
