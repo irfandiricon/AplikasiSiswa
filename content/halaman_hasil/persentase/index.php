@@ -23,9 +23,8 @@
                         foreach($data_bidang_layanan as $bidang_layanan){
                             $deskripsi_bidang_layanan = $bidang_layanan['deskripsi_bidang_layanan'];
                             $id_bidang_layanan = $bidang_layanan['id_bidang_layanan'];
-
                             $q2 = "SELECT COUNT(*) as total_pertanyaan FROM $db.$table_pertanyaan
-                                WHERE bidang_layanan='$id_bidang_layanan' and created_by = '$created_by'";
+                                WHERE bidang_layanan='$id_bidang_layanan'";
                             $ex_q2 = mysqli_query($con, $q2);
                             while($r2 = mysqli_fetch_array($ex_q2)){
                             $total_soal_perbidang = $r2['total_pertanyaan'];

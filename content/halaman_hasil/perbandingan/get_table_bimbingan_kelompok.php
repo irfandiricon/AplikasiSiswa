@@ -1,11 +1,17 @@
 <?php
 include "../master/master_data_output.php";
+
+if($jumlah_siswa==0){
+    echo "<div align='center' valign='center'><font size='6' color='red'><b>Maaf, Anda belum memiliki siswa !!!</b></font></div>";
+    exit();
+}
+
 foreach($data_bidang_layanan as $bidang_layanan){
     $deskripsi_bidang_layanan = $bidang_layanan['deskripsi_bidang_layanan'];
     $id_bidang_layanan = $bidang_layanan['id_bidang_layanan'];
 
     $q2 = "SELECT COUNT(*) as total_pertanyaan FROM $db.$table_pertanyaan
-        WHERE bidang_layanan='$id_bidang_layanan' and created_by = '$created_by'";
+        WHERE bidang_layanan='$id_bidang_layanan'";
     $ex_q2 = mysqli_query($con, $q2);
     while($r2 = mysqli_fetch_array($ex_q2)){
         $total_soal_perbidang = $r2['total_pertanyaan'];
