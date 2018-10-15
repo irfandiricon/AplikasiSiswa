@@ -8,10 +8,6 @@ $table_metode_layanan = TABLE_METODE_LAYANAN;
 $table_media_layanan = TABLE_MEDIA_LAYANAN;
 
 $q = "SELECT
-    (SELECT COUNT(*) FROM $db.$table_pertanyaan WHERE bidang_layanan=1) AS total_pribadi,
-    (SELECT COUNT(*) FROM $db.$table_pertanyaan WHERE bidang_layanan=2) AS total_sosial,
-    (SELECT COUNT(*) FROM $db.$table_pertanyaan WHERE bidang_layanan=3) AS total_belajar,
-    (SELECT COUNT(*) FROM $db.$table_pertanyaan WHERE bidang_layanan=4) AS total_karir,
     b.deskripsi AS bidang_layanan, a.tujuan_layanan, c.deskripsi AS komponen_layanan, d.deskripsi AS strategi_layanan,
     a.materi_layanan,
     a.metode_layanan AS id_metode_layanan, a.media_layanan AS id_media_layanan, a.evaluasi
@@ -26,6 +22,9 @@ $ex = mysqli_query($con, $q);
 <div class="card" style="overflow:scroll">
     <div class="card-body">
         <div class="panel panel-default panel-heading" style="width:1500px;padding-right:20px;">
+            <button class="btn btn-info" onclick="DownloadTabelRpl()" type="button">
+                <span class="fa fa-download"></span> &nbsp; Download Tabel RPL
+            </button>
             <table class="table table-striped table-bordered" id="table_action_plan">
                 <thead>
                     <tr>
@@ -74,7 +73,7 @@ $ex = mysqli_query($con, $q);
                     <?php
                     }
                     ?>
-                </body>
+                </tbody>
             </table>
         </div>
         <hr width="100%">
