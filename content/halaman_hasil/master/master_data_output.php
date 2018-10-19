@@ -20,7 +20,8 @@ while($r1 = mysqli_fetch_assoc($ex_q1)){
 }
 
 $q4 = "SELECT user_id as user_id_siswa, user_id_login as user_id_login_siswa, nama_lengkap as nama_siswa,
-    IF(jenis_kelamin='L','Laki-Laki','Perempuan') as jenis_kelamin_siswa FROM $db.$table_siswa where id_guru='$id_guru' order by nama_lengkap";
+    IF(jenis_kelamin='L','Laki-Laki','Perempuan') as jenis_kelamin_siswa FROM $db.$table_siswa where id_guru='$id_guru' and flag_aktif='Y'
+    order by nama_lengkap";
 $ex_q4 = mysqli_query($con, $q4);
 $jumlah_siswa = mysqli_num_rows($ex_q4);
 while($r4 = mysqli_fetch_assoc($ex_q4)){

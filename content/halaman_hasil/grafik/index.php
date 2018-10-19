@@ -65,7 +65,7 @@
                 FROM $db.$table_jawaban AS a
                 LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                 LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                WHERE a.bidang_layanan = 1";
+                WHERE a.bidang_layanan = 1 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
             $ex_q6_1 = mysqli_query($con, $q6_1);
             $jum_q6_1 = mysqli_num_rows($ex_q6_1);
             $dr_1=0;
@@ -88,7 +88,7 @@
                 FROM $db.$table_jawaban AS a
                 LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                 LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                WHERE a.bidang_layanan = 2";
+                WHERE a.bidang_layanan = 2 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
             $ex_q6_2 = mysqli_query($con, $q6_2);
             $jum_q6_2 = mysqli_num_rows($ex_q6_2);
             $dr_2=0;
@@ -111,7 +111,7 @@
                 FROM $db.$table_jawaban AS a
                 LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                 LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                WHERE a.bidang_layanan = 3";
+                WHERE a.bidang_layanan = 3 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
             $ex_q6_3 = mysqli_query($con, $q6_3);
             $jum_q6_3 = mysqli_num_rows($ex_q6_3);
             $dr_3=0;
@@ -134,7 +134,7 @@
                 FROM $db.$table_jawaban AS a
                 LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                 LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                WHERE a.bidang_layanan = 4";
+                WHERE a.bidang_layanan = 4 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
             $ex_q6_4 = mysqli_query($con, $q6_4);
             $jum_q6_4 = mysqli_num_rows($ex_q6_4);
             $dr_4=0;

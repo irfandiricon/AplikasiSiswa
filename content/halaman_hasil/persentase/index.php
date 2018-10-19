@@ -185,23 +185,26 @@
                                     FROM $db.$table_jawaban AS a
                                     LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                                     LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                                    WHERE a.bidang_layanan = 1";
+                                    WHERE a.bidang_layanan = 1 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
                                 $ex_q6_1 = mysqli_query($con, $q6_1);
                                 $jum_q6_1 = mysqli_num_rows($ex_q6_1);
                                 $dr_1=0;
+                                //echo $q6_1."<br>";
                                 while($rq6_1=mysqli_fetch_assoc($ex_q6_1)){
                                     $j6_1[] = $rq6_1;
                                     $jawaban_1 = isset($rq6_1['jawaban']) ? $rq6_1['jawaban']:0;
                                     $exp_j6_1 = explode(",",$jawaban_1);
+
                                     for($i=0;$i<$jum_q6_1;$i++){
                                         $n = isset($exp_j6_1[$j][0]) ? $exp_j6_1[$j][0]:0;
                                     }
                                     $dr_1 += $n;
                                 }
+
                                 $persentase_dr_1 = ($dr_1 / (5*$jumlah_siswa)) * 100;
                                 $arr_dr_1[] = $persentase_dr_1;
                         ?>
-                                <td><?php echo ($persentase_dr_1);?></td>
+                                <td><?php echo (ceil($persentase_dr_1));?></td>
                         <?php
                             }
                         ?>
@@ -212,7 +215,7 @@
                                     FROM $db.$table_jawaban AS a
                                     LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                                     LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                                    WHERE a.bidang_layanan = 2";
+                                    WHERE a.bidang_layanan = 2 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
                                 $ex_q6_2 = mysqli_query($con, $q6_2);
                                 $jum_q6_2 = mysqli_num_rows($ex_q6_2);
                                 $dr_2=0;
@@ -228,7 +231,7 @@
                                 $persentase_dr_2 = ($dr_2 / (5*$jumlah_siswa)) * 100;
                                 $arr_dr_2[] = $persentase_dr_2;
                         ?>
-                                <td><?php echo ($persentase_dr_2);?></td>
+                                <td><?php echo (ceil($persentase_dr_2));?></td>
                         <?php
                             }
                         ?>
@@ -239,7 +242,7 @@
                                     FROM $db.$table_jawaban AS a
                                     LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                                     LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                                    WHERE a.bidang_layanan = 3";
+                                    WHERE a.bidang_layanan = 3 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
                                 $ex_q6_3 = mysqli_query($con, $q6_3);
                                 $jum_q6_3 = mysqli_num_rows($ex_q6_3);
                                 $dr_3=0;
@@ -255,7 +258,7 @@
                                 $persentase_dr_3 = ($dr_3 / (5*$jumlah_siswa)) * 100;
                                 $arr_dr_3[] = $persentase_dr_3;
                         ?>
-                                <td><?php echo ($persentase_dr_3);?></td>
+                                <td><?php echo (ceil($persentase_dr_3));?></td>
                         <?php
                             }
                         ?>
@@ -266,7 +269,7 @@
                                     FROM $db.$table_jawaban AS a
                                     LEFT JOIN $db.$table_siswa AS b ON b.user_id_login = a.user_id
                                     LEFT JOIN $db.$table_guru AS c ON b.id_guru = c.user_id
-                                    WHERE a.bidang_layanan = 4";
+                                    WHERE a.bidang_layanan = 4 and b.flag_aktif='Y' and c.user_id_login='$created_by'";
                                 $ex_q6_4 = mysqli_query($con, $q6_4);
                                 $jum_q6_4 = mysqli_num_rows($ex_q6_4);
                                 $dr_4=0;
@@ -279,10 +282,11 @@
                                     }
                                     $dr_4 += $n;
                                 }
+
                                 $persentase_dr_4 = ($dr_4 / (5*$jumlah_siswa)) * 100;
                                 $arr_dr_4[] = $persentase_dr_4;
                         ?>
-                                <td><?php echo ($persentase_dr_4);?></td>
+                                <td><?php echo (ceil($persentase_dr_4));?></td>
                         <?php
                             }
                         ?>

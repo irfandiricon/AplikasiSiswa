@@ -28,7 +28,8 @@
                     }else{
                         $parameter_level = " and c.user_id_login='$user_id_login'";
                     }
-                    $query = "SELECT a.user_id_login, a.nis,a.kelas, a.nama_lengkap,CONCAT(a.tempat_lahir,',',DATE_FORMAT(a.tanggal_lahir,'%d/%m/%Y')) AS tgl_lahir,
+                    $query = "SELECT a.user_id_login, a.nis,a.kelas, a.nama_lengkap,
+                    CONCAT(a.tempat_lahir,',',DATE_FORMAT(a.tanggal_lahir,'%d/%m/%Y')) AS tgl_lahir,
                     a.jenis_kelamin, IF(a.flag_aktif='Y','Aktif','N. Aktif') AS flag_aktif, b.nama AS nama_sekolah, a.flag_aktif AS status_aktif
                     FROM $db.$table_siswa AS a
                     LEFT JOIN $db.$table_sekolah AS b ON b.id = a.id_sekolah
