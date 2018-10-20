@@ -26,5 +26,5 @@ $ex = mysqli_query($con, $q);
         </a></p>
         <hr width="100%">
     <?php } ?>
-    <a href="javascript:void(0)" onclick="SeeMoreNews()">Tampilkan Lebih Banyak <span class="glyphicon glyphicon-chevron-down"></span></a>
+    <a href="javascript:void(0)" onclick="SeeMoreNews()">Tampilkan Lebih Banyak</a>
 </div>

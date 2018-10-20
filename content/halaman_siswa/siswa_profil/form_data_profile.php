@@ -90,7 +90,8 @@
                           <tr>
                               <td>Kelas</td>
                               <td>
-                                <input class="form-control" value="<?php echo $kelas;?>" readonly name="kelas" id="kelas"></td>
+                                  <input class="easyui-combobox" value="<?php echo $kelas;?>" name="kelas" id="kelas">
+                              </td>
                               <td width="5"></td>
                           </tr>
                             <tr>
@@ -187,6 +188,14 @@
           $('#tanggal_lahir').datetimepicker({
               defaultDate: new Date(),
               format:'DD/MM/YYYY'
+          });
+
+          $('#kelas').combobox({
+              url : 'content/master/master_data_kelas.php',
+              width : '100%',
+              panelHeight : 'auto',
+              valueField : 'id',
+              textField : 'deskripsi'
           });
     });
 </script>

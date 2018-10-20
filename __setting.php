@@ -9,6 +9,11 @@ define('HOST','localhost:3306');
 define('USERNAME','root');
 define('PASSWORD','');
 
+// define('DATABASE','u721770811_sas');
+// define('HOST','mysql.idhostinger.com');
+// define('USERNAME','u721770811_sas');
+// define('PASSWORD','windows7');
+
 define('TABLE_MENU_GROUP', 'app_menu_group');
 define('TABLE_MENU', 'app_menu');
 define('TABLE_MENU_ACCESS', 'app_menu_access');
