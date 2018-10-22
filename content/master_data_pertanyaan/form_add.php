@@ -22,6 +22,7 @@ if(!empty($id) || $id != "" || $id != "null"){
 		$bidang_layanan = $r['bidang_layanan'];
 		$komponen_layanan = $r['komponen_layanan'];
 		$strategi_layanan = $r['strategi_layanan'];
+		$data_khusus = $r['data_khusus'];
 
 		$q2 = "SELECT GROUP_CONCAT(deskripsi) as deskripsi_metode_layanan FROM $db.$table_metode_layanan WHERE id IN ($metode_layanan)";
 		$ex_q2 = mysqli_query($con, $q2);
@@ -191,6 +192,24 @@ if(!empty($id) || $id != "" || $id != "null"){
 												<td>Evaluasi</td>
 												<td>
 														<input required value="Proses dan hasil" class="form-control" placeholder="Masukan Evaluasi" name="evaluasi" id="evaluasi"></textarea>
+												</td>
+										</tr>
+										<tr>
+												<td>Pertanyaan Khusus</td>
+												<td>
+														<select class="form-control" name="data_khusus" id="data_khusus">
+																<option value="">Pilih Data</option>
+																<?php
+																$id = array("0","1");
+																$deskripsi = array("Tidak","Ya");
+																$jum = count($id);
+																for($i=0;$i<$jum;$i++){
+																?>
+																<option value="<?php echo $id[$i];?>" <?php if($id[$i]==$data_khusus){ echo "selected";}?>><?php echo $deskripsi[$i];?></option>
+																<?php
+																}
+																?>
+														</select>
 												</td>
 										</tr>
 								</tbody>
