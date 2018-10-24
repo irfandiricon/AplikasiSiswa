@@ -184,28 +184,28 @@ $data_per_bidang = array($avr_persentase_dr_1, $avr_persentase_dr_2, $avr_persen
 $total_soal = $s1+$s2+$s3+$s4;
 
 $jum_1 = count($id_1);
-for($i=0;$i<$jum_1;$i++){
+for($i=0;$i<1;$i++){
     $idj_1 = $id_1[$i];
     if($idj_1 != null){
         $n_id_1[] = $idj_1;
     }
 }
 $jum_2 = count($id_2);
-for($i=0;$i<$jum_2;$i++){
+for($i=0;$i<1;$i++){
     $idj_2 = $id_2[$i];
     if($idj_2 != null){
         $n_id_2[] = $idj_2;
     }
 }
 $jum_3 = count($id_3);
-for($i=0;$i<$jum_3;$i++){
+for($i=0;$i<1;$i++){
     $idj_3 = $id_3[$i];
     if($idj_3 != null){
         $n_id_3[] = $idj_3;
     }
 }
 $jum_4 = count($id_4);
-for($i=0;$i<$jum_4;$i++){
+for($i=0;$i<1;$i++){
     $idj_4 = $id_4[$i];
     if($idj_4 != null){
         $n_id_4[] = $idj_4;
@@ -222,18 +222,20 @@ $idp_12 = implode(",",$dp_2);
 $idp_13 = implode(",",$dp_3);
 $idp_14 = implode(",",$dp_4);
 //echo join(array($idn_1,$idn_2));
-$merge_idp = join(array($idn_1,$idn_2,$idn_3,$idn_4));
-$merge_per_butir = join(array($idp_11,$idp_12,$idp_13,$idp_14));
+$merge_idp_1 = join(array($idn_1,",",$idn_2,",",$idn_3,",",$idn_4));
+$merge_per_butir = join(array($idp_11,",",$idp_12,",",$idp_13,",",$idp_14));
 
-$id_ex_1 = explode(",",$merge_idp);
+$id_ex_1 = explode(",",$merge_idp_1);
 $text_ex_1 = explode(",",$merge_per_butir);
-$jum = count($id_ex_1);
+
+$jum = count($text_ex_1);
 $data_akhir = array();
 $id_terpilih = array();
 $data = array(0);
 for($i=0;$i<$jum;$i++){
     $d_id = $id_ex_1[$i];
     $n_jwb = $text_ex_1[$i];
+
     if($n_jwb > 50){
         $data_akhir[] = array("id" => $d_id, "value" => $n_jwb);
     }

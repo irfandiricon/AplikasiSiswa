@@ -1,12 +1,5 @@
 <?php
-include "../../halaman_hasil/master/master_data_output.php";
-
-$table_pertanyaan = TABLE_PERTANYAAN;
-$table_bidang_layanan = TABLE_BIDANG_LAYANAN;
-$table_komponen_layanan = TABLE_KOMPONEN_LAYANAN;
-$table_strategi_layanan = TABLE_STRATEGI_LAYANAN;
-$table_metode_layanan = TABLE_METODE_LAYANAN;
-$table_media_layanan = TABLE_MEDIA_LAYANAN;
+include "../master/master_data_output.php";
 
 if($jumlah_siswa==0){
     echo "<div align='center' valign='center'><font size='6' color='red'><b>Maaf, Anda belum memiliki siswa !!!</b></font></div>";
@@ -243,7 +236,7 @@ for($i=0;$i<$jum;$i++){
     $d_id = $id_ex_1[$i];
     $n_jwb = $text_ex_1[$i];
 
-    if($n_jwb > 50 || ($n_jwb >= 25 && $n_jwb <= 50)){
+    if($n_jwb >= 25 && $n_jwb <= 50){
         $data_akhir[] = array("id" => $d_id, "value" => $n_jwb);
     }
 }
@@ -262,74 +255,38 @@ foreach($id_terpilih as $key_id){
 
 $id = implode(",",$data);
 
-$q = "SELECT
-b.deskripsi AS bidang_layanan, a.tujuan_layanan, c.deskripsi AS komponen_layanan, d.deskripsi AS strategi_layanan,
-a.materi_layanan,
-a.metode_layanan AS id_metode_layanan, a.media_layanan AS id_media_layanan, a.evaluasi
-FROM $db.$table_pertanyaan AS a
-LEFT JOIN $db.$table_bidang_layanan AS b ON b.id = a.bidang_layanan
-LEFT JOIN $db.$table_komponen_layanan AS c ON c.id = a.komponen_layanan
-LEFT JOIN $db.$table_strategi_layanan AS d ON d.id = a.strategi_layanan WHERE a.id IN ($id)";
+$q = "SELECT id,pertanyaan, rumusan_kebutuhan, rumusan_tujuan FROM $db.$table_pertanyaan WHERE id IN ($id) and data_khusus='1'";
 $ex = mysqli_query($con, $q);
 ?>
-<script src="content/halaman_program_kerja/data_action_plan/index.js"></script>
-<div class="card" style="overflow:scroll">
-    <div class="card-body">
-        <div class="panel panel-default panel-heading" style="width:1500px;padding-right:20px;">
-            <button class="btn btn-info" onclick="DownloadTabelRpl()" type="button">
-                <span class="fa fa-download"></span> &nbsp; Download Tabel RPL
-            </button>
-            <table class="table table-hover table-striped table-bordered" id="table_action_plan">
-                <thead>
-                    <tr>
-                        <td width="120"><b>Bidang Layanan</b></td>
-                        <td width="200"><b>Tujuan Layanan</b></td>
-                        <td width="150"><b>Komponen Layanan</b></td>
-                        <td width="150"><b>Strategi Layanan</b></td>
-                        <td width="250"><b>Materi</b></td>
-                        <td width="150"><b>Metode</b></td>
-                        <td width="150"><b>Media</b></td>
-                        <td width="150"><b>Evaluasi</b></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    while($row = mysqli_fetch_assoc($ex)){
-                        $bidang_layanan = $row['bidang_layanan'];
-                        $tujuan_layanan = $row['tujuan_layanan'];
-                        $komponen_layanan= $row['komponen_layanan'];
-                        $strategi_layanan = $row['strategi_layanan'];
-                        $materi_layanan = $row['materi_layanan'];
-                        $id_metode_layanan = $row['id_metode_layanan'];
-                        $id_media_layanan = $row['id_media_layanan'];
-                        $evaluasi = $row['evaluasi'];
 
-                        $q1 = "SELECT GROUP_CONCAT(deskripsi) as deskripsi FROM $db.$table_metode_layanan where id IN ($id_metode_layanan)";
-                        $ex_q1 = mysqli_query($con, $q1);
-                        $r1 = mysqli_fetch_assoc($ex_q1);
-                        $metode_layanan = $r1['deskripsi'];
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <td colspan="3">
+                <font size="4"><b>Konseling Kelompok</b></font>
+            </td>
+        </tr>
+        <tr>
+            <td width="10">No</td>
+            <td width="350">Hasil Angket</td>
+            <td width="350">Rumusan Kebutuhan</td>
+            <td width="350">Rumusan Tujuan</td>
+        </tr>
+        <?php
+        $no = 1;
 
-                        $q2 = "SELECT GROUP_CONCAT(deskripsi) as deskripsi FROM $db.$table_media_layanan where id IN ($id_media_layanan)";
-                        $ex_q2 = mysqli_query($con, $q2);
-                        $r2 = mysqli_fetch_assoc($ex_q2);
-                        $media_layanan = $r2['deskripsi'];
-                    ?>
-                    <tr>
-                        <td><?php echo $bidang_layanan;?></td>
-                        <td><?php echo $tujuan_layanan;?></td>
-                        <td><?php echo $komponen_layanan;?></td>
-                        <td><?php echo $strategi_layanan;?></td>
-                        <td><?php echo $materi_layanan;?></td>
-                        <td><?php echo $metode_layanan;?></td>
-                        <td><?php echo $media_layanan;?></td>
-                        <td><?php echo $evaluasi;?></td>
-                    </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
+        while($row = mysqli_fetch_assoc($ex)){
+            $pertanyaan = $row['pertanyaan'];
+            $rumusan_kebutuhan = $row['rumusan_kebutuhan'];
+            $rumusan_tujuan = $row['rumusan_tujuan'];
+        ?>
+        <tr>
+            <td><?php echo $no++;?></td>
+            <td><?php echo $pertanyaan;?></td>
+            <td><?php echo $rumusan_kebutuhan;?></td>
+            <td><?php echo $rumusan_tujuan;?></td>
+        </tr>
+      <?php } ?>
+    </thead>
+</table>
 <hr width="100%">

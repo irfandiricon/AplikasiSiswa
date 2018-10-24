@@ -24,3 +24,7 @@ function ResetDataJawaban(user_id, nama_siswa){
         }
     });
 }
+
+function ExportToWord(){
+    window.open('content/halaman_hasil/persentase/table_export.php');
+}

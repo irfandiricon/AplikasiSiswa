@@ -19,3 +19,25 @@ function GetTable2(){
         }
     });
 }
+
+function GetTable3(){
+    $.ajax({
+        url : 'content/halaman_hasil/perbandingan/get_table_konseling_kelompok.php',
+        cache : false,
+        type : 'post',
+        success : function(table){
+            $('#DataTable').html(table);
+        }
+    });
+}
+
+function GetTable4(){
+    $.ajax({
+        url : 'content/halaman_hasil/perbandingan/get_table_konseling_individu.php',
+        cache : false,
+        type : 'post',
+        success : function(table){
+            $('#DataTable').html(table);
+        }
+    });
+}

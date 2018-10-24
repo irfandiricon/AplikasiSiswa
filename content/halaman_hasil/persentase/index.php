@@ -2,10 +2,10 @@
 <?php include "../master/master_data_output.php";?>
 <div class="card" style="overflow:scroll;height:450px">
     <div class="card-body">
-      <!-- <button class="btn btn-success">
-          <span class="fa fa-download"></span> Export To Excell
-      </button>
-      <hr width="100%"> -->
+        <button class="btn btn-info" onclick="ExportToWord()">
+            <span class="fa fa-download"></span> Export To Word
+        </button>
+        <hr width="100%">
         <?php
         if($jumlah_siswa==0){
             echo "<div align='center' valign='center'><font size='6' color='red'><b>Maaf, Anda belum memiliki siswa !!!</b></font></div>";
@@ -161,7 +161,7 @@
                         }
 
                         $total_nilai = isset($jumlah_per_siswa) ? $jumlah_per_siswa:0;
-                        $total_persen = ($total_nilai / (5*($s1+$s2+$s3+$s4))) * 100;
+                        $total_persen = ceil(($total_nilai / (5*($s1+$s2+$s3+$s4))) * 100);
                         ?>
                         <td>
                             <?php echo number_format($total_persen,2)." %";?>
