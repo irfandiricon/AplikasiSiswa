@@ -4,15 +4,15 @@ define('NAMA_DIRECTORY','AplikasiSiswa');
 define('DIRECTORY_FOTO_PROFILE','foto_profil');
 define('FILE_LOCATION','file_upload/');
 
-define('DATABASE','app_siswa');
-define('HOST','localhost:3306');
-define('USERNAME','root');
-define('PASSWORD','');
+// define('DATABASE','app_siswa');
+// define('HOST','localhost:3306');
+// define('USERNAME','root');
+// define('PASSWORD','');
 
-// define('DATABASE','u721770811_sas');
-// define('HOST','mysql.idhostinger.com');
-// define('USERNAME','u721770811_sas');
-// define('PASSWORD','windows7');
+define('DATABASE','u829004525_eabk');
+define('HOST','mysql.idhostinger.com');
+define('USERNAME','u829004525_eabk');
+define('PASSWORD','windows7');
 
 define('TABLE_MENU_GROUP', 'app_menu_group');
 define('TABLE_MENU', 'app_menu');
