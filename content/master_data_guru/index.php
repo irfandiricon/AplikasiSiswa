@@ -5,7 +5,8 @@
             <table class="display nowrap table table-hover table-striped table-bordered" id="tabel_guru" cellspacing="0" width="100%">
                 <thead>
                     <tr>
-                        <td width="150">NIS</td>
+                        <td width="10"></td>
+                        <td width="150">NIP</td>
                         <td width="200">Nama Lengkap</td>
                         <td width="200">Tempat & Tgl Lahir</td>
                         <td width="100">JK</td>
@@ -41,6 +42,9 @@
                         $onclick_delete = "prosesDeleteDataGuru('$user_id','$nama_lengkap')";
                     ?>
                     <tr>
+                        <td>
+                            <input type="checkbox" name="check_guru[]" id="check_guru" value="<?php echo $user_id;?>">
+                        </td>
                         <td><?php echo $nis;?></td>
                         <td><?php echo $nama_lengkap;?></td>
                         <td><?php echo $tgl_lahir;?></td>

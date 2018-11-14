@@ -17,7 +17,7 @@ $created_date = isset($row['created_date']) ? $row['created_date']:"";
 <div id="panel-content">
     <div class="panel panel-default" style="border-radius:0px !important;">
         <div class="panel-heading">
-            <p><u>Created By <b><?php echo $created_by;?></b> <span class="glyphicon glyphicon-menu-right"></span> On <b><?php echo $created_date;?></b></u></p>
+            <p><u>Created On <b><?php echo $created_date;?></b></u></p>
         </div>
         <div class="panel-body">
             <?php echo $keterangan;?>

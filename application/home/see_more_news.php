@@ -24,7 +24,7 @@ $created_date = isset($row['created_date']) ? $row['created_date']:"";
         <h3 class="panel-title">
             <font size="4"><u><b><?php echo $judul;?></b><u></font>
         </h3>
-        <p><u>Created By <b><?php echo $created_by;?></b> <span class="glyphicon glyphicon-menu-right"></span> On <b><?php echo $created_date;?></b></u></p>
+        <p><u>Created On <b><?php echo $created_date;?></b></u></p>
         <p><a href="javascript:void(0)" onclick="DetailNews('<?php echo $id;?>')">
           Selengkapnya <span class="glyphicon glyphicon-chevron-right"></span>
         </a></p>

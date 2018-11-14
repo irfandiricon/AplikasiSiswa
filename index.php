@@ -12,5 +12,5 @@ if ($USER_ID && $FLAG_AKTIF=="Y"){
         include "template_3.php";
     }
 }else{
-    echo "<script>window.location.href='eadministrasi-bk/?page=home';</script>";
+    echo "<script>window.location.href='application/?page=home';</script>";
 }

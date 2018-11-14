@@ -32,18 +32,18 @@ $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id']:0;
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="header-background">
                         <div><?php echo $page;?></div>
                     </div>
                     <?php require "content.php";?>
                 </div>
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                     <div class="header-background">
                         Berita Terbaru
                     </div>
                     <?php require "daftar_berita.php";?>
-                </div>
+                </div> -->
             </div>
             <div class="row">
                 <div class="col-md-12">
