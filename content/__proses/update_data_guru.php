@@ -2,22 +2,24 @@
 include "../../koneksi_db/Koneksi.php";
 $table_guru = TABLE_GURU;
 $table_user = TABLE_USER;
-$user_id = isset($_POST['user_id']) ? $_POST['user_id']:"";
+$user_id = isset($_POST['user_id_login']) ? $_POST['user_id_login']:"";
 $flag_aktif= isset($_POST['flag_aktif']) ? $_POST['flag_aktif']:"";
 $created_by= isset($_SESSION['user_id']) ? $_SESSION['user_id']:"";
 
 $q = "UPDATE $db.$table_guru SET flag_aktif='$flag_aktif', updated_date=now(), updated_by='$created_by'
-      WHERE user_id_login='$user_id'";
+      WHERE user_id_login in ($user_id)";
 $ex = mysqli_query($con, $q);
 
 $q2 = "UPDATE $db.$table_user SET flag_aktif='$flag_aktif', updated_date=now(), updated_by='$created_by'
-      WHERE user_id='$user_id'";
+      WHERE user_id in ($user_id)";
 $ex2 = mysqli_query($con, $q2);
 
 $pesan = array();
 
 if(!$ex) {
     $pesan = "Data gagal tersimpan, Error : ".mysqli_error($con);
+}else{
+    $pesan = "Data berhasil tersimpan !!! ";
 }
 
 echo json_encode($pesan);

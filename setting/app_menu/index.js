@@ -1,12 +1,12 @@
 $(function (){
-    var hTbl = $('#panel-content').height();
+    var hTbl = parseInt($(window).innerHeight()) - parseInt($('.header').height()) - parseInt($('.footer').height()) - 120;
     var wTbl = document.getElementById("panel-content").offsetWidth-50;
     $('#dg_group_menu').datagrid({
         title:'Group Menu',
         singleSelect:true,
         fitColumns: true,
         pagination:true,
-        height : 300,
+        height : hTbl,
         pageSize:10,
         width : wTbl,
         url:'setting/master/master_data_group_menu.php',
